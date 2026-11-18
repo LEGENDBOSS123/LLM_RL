@@ -1,0 +1,7 @@
+FROM docker.io/library/python:3.12-slim
+RUN pip install --no-cache-dir numpy sympy pytest pandas scipy sortedcontainers z3-solver networkx \
+ && useradd -u 10001 -M -s /usr/sbin/nologin runner
+COPY executor.py /opt/executor.py
+USER runner
+WORKDIR /tmp
+ENTRYPOINT ["python", "-u", "/opt/executor.py"]

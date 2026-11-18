@@ -1,0 +1,35 @@
+# --- environments / caches
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# --- large artifacts (models, data, checkpoints)
+models/
+data/
+runs/
+*.safetensors
+*.npz
+*.gguf
+
+# --- logs and run outputs
+*.log
+*.out
+server*.log
+pipeline*.log
+queue*.log
+
+# --- local backups
+*.bak
+*.bak[0-9]*
+*_backup.*
+
+# --- personal files (not part of the project)
+resume*
+*.pdf
+
+# --- local-only folders
+logs/
+personal/
+adapters/
+archive/backups/

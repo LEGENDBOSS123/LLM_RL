@@ -1,0 +1,114 @@
+{
+  "model": "Qwen2.5-1.5B-Instruct-bf16",
+  "k": 2,
+  "max_tokens": 1024,
+  "summary": {
+    "all": {
+      "pass@1": 0.051,
+      "pass@2": 0.078,
+      "has_code": 0.996,
+      "truncated": 0.006,
+      "tokens": 313.904,
+      "n": 244
+    },
+    "source=kodcode": {
+      "pass@1": 0.219,
+      "pass@2": 0.312,
+      "has_code": 1,
+      "truncated": 0,
+      "tokens": 332.938,
+      "n": 16
+    },
+    "difficulty=medium": {
+      "pass@1": 0.019,
+      "pass@2": 0.038,
+      "has_code": 1,
+      "truncated": 0,
+      "tokens": 316.24,
+      "n": 104
+    },
+    "kodcode/Taco": {
+      "pass@1": 0.2,
+      "pass@2": 0.4,
+      "has_code": 1,
+      "truncated": 0,
+      "tokens": 376.0,
+      "n": 5
+    },
+    "difficulty=hard": {
+      "pass@1": 0.018,
+      "pass@2": 0.024,
+      "has_code": 0.988,
+      "truncated": 0.018,
+      "tokens": 364.03,
+      "n": 83
+    },
+    "difficulty=easy": {
+      "pass@1": 0.158,
+      "pass@2": 0.228,
+      "has_code": 1,
+      "truncated": 0,
+      "tokens": 236.649,
+      "n": 57
+    },
+    "kodcode/Filter": {
+      "pass@1": 0.5,
+      "pass@2": 0.667,
+      "has_code": 1,
+      "truncated": 0,
+      "tokens": 325.167,
+      "n": 3
+    },
+    "kodcode/Docs": {
+      "pass@1": 0.0,
+      "pass@2": 0.0,
+      "has_code": 1,
+      "truncated": 0,
+      "tokens": 438.5,
+      "n": 1
+    },
+    "kodcode/Leetcode": {
+      "pass@1": 0.0,
+      "pass@2": 0.0,
+      "has_code": 1,
+      "truncated": 0,
+      "tokens": 281,
+      "n": 1
+    },
+    "kodcode/Prefill": {
+      "pass@1": 0.5,
+      "pass@2": 0.5,
+      "has_code": 1,
+      "truncated": 0,
+      "tokens": 235.75,
+      "n": 2
+    },
+    "kodcode/Codeforces": {
+      "pass@1": 0.0,
+      "pass@2": 0.0,
+      "has_code": 1,
+      "truncated": 0,
+      "tokens": 312.5,
+      "n": 2
+    },
+    "kodcode/Code_Contests": {
+      "pass@1": 0.0,
+      "pass@2": 0.0,
+      "has_code": 1,
+      "truncated": 0,
+      "tokens": 327.75,
+      "n": 2
+    },
+    "source=leetcode": {
+      "pass@1": 0.039,
+      "pass@2": 0.061,
+      "has_code": 0.996,
+      "truncated": 0.007,
+      "tokens": 312.568,
+      "n": 228
+    }
+  },
+  "gen_min": 10.540579481919606,
+  "grade_min": 0.6273532470067342,
+  "tok_s": 242.21470344326613
+}

@@ -1,0 +1,9 @@
+models/Qwen3-1.7B-B (plain sampling)
+  unseen pass@1 0.226 | maj@8 0.286 | pass@8 0.571 | answer-tag rate 0.97 | GSM8K pass@1 0.725
+    letter_counting        pass@1 0.23  pass@8 0.80
+    family_relationships   pass@1 0.23  pass@8 0.73
+    word_sorting           pass@1 0.04  pass@8 0.13
+    number_sequence        pass@1 0.55  pass@8 0.87
+    course_schedule        pass@1 0.07  pass@8 0.47
+    circuit_logic          pass@1 0.46  pass@8 1.00
+    word_ladder            pass@1 0.00  pass@8 0.00

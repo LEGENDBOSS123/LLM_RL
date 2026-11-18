@@ -1,0 +1,16 @@
+round 1 done
+model models/Qwen3-1.7B-B2 | 35 problems, K=8 answers, C=8 continuations per cut
+correct  traces n= 23 | V(0) 0.43  V(25%) 0.36  V(50%) 0.41  V(75%) 0.47
+           prefix gain V(75%)-V(0): mean +0.03 | up >0.2: 7  flat: 11  down <-0.2: 5
+wrong    traces n= 33 | V(0) 0.24  V(25%) 0.22  V(50%) 0.20  V(75%) 0.17
+           prefix gain V(75%)-V(0): mean -0.08 | up >0.2: 5  flat: 19  down <-0.2: 9
+           rescuable (some cut has V>0): 20/33
+           problems with V(0)=0 (all 8 wrong): 12, rescued by a cut: 1
+           biggest drop located in: 0-25% 16, 25-50% 3, 50-75% 4, 75%-answer 10
+per task (correct traces V0 -> V25/50/75):
+  letter_counting        V0 0.22 -> 0.22 0.31 0.34
+  family_relationships   V0 0.25 -> 0.17 0.25 0.25
+  word_sorting           V0 0.50 -> 0.12 0.38 0.25
+  number_sequence        V0 0.68 -> 0.62 0.62 0.78
+  course_schedule        V0 0.38 -> 0.38 0.38 0.38
+  circuit_logic          V0 0.57 -> 0.45 0.47 0.57

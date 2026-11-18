@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RL Run Monitor</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root {
+  --bg: #f6f5f2; --panel: #ffffff; --ink: #1d1d1b; --muted: #6b6a66; --line: #e3e1db;
+  --accent: #2f6fdb; --good: #1f8a4c; --bad: #c4432b; --warn: #b7791f;
+  --s1: #2f6fdb; --s2: #d9822b; --s3: #1f8a4c; --s4: #8e44ad; --s5: #c4432b;
+  --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141413; --panel: #1e1e1c; --ink: #ecebe6; --muted: #9b9a94; --line: #34332f;
+    --accent: #6c9cf0; --good: #4cc27c; --bad: #ec7660; --warn: #e0a64a;
+    --s1: #6c9cf0; --s2: #f0a45c; --s3: #4cc27c; --s4: #b58ae0; --s5: #ec7660;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141413; --panel: #1e1e1c; --ink: #ecebe6; --muted: #9b9a94; --line: #34332f;
+  --accent: #6c9cf0; --good: #4cc27c; --bad: #ec7660; --warn: #e0a64a;
+  --s1: #6c9cf0; --s2: #f0a45c; --s3: #4cc27c; --s4: #b58ae0; --s5: #ec7660;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.45 -apple-system, system-ui, sans-serif; }
+header { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: baseline; padding: 14px 16px; border-bottom: 1px solid var(--line); }
+header h1 { font-size: 17px; margin: 0; }
+header .meta { color: var(--muted); font-size: 13px; }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; background: var(--muted); }
+.dot.live { background: var(--good); }
+main { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 14px; padding: 14px 16px; }
+@media (max-width: 980px) { main { grid-template-columns: 1fr; } }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; min-width: 0; }
+.panel h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 0 0 8px; font-weight: 600; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-bottom: 14px; }
+.tile { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+.tile .k { color: var(--muted); font-size: 12px; }
+.tile .v { font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.tile .d { font-size: 12px; font-variant-numeric: tabular-nums; }
+.up { color: var(--good); } .down { color: var(--bad); }
+.charts { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+.chart-box { position: relative; height: 220px; }
+.left { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.right { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+pre, .mono { font-family: var(--mono); font-size: 12.5px; white-space: pre-wrap; word-break: break-word; margin: 0; }
+.chatlog { height: 420px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; padding-right: 4px; }
+.msg { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; }
+.msg .who { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 4px; }
+.msg.system .who { color: var(--s4); } .msg.user .who { color: var(--accent); } .msg.assistant .who { color: var(--good); }
+.msg .foot { color: var(--muted); font-size: 11px; margin-top: 4px; }
+.row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+textarea { width: 100%; min-height: 60px; resize: vertical; background: var(--bg); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 8px; font: inherit; }
+button, select { background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 7px; padding: 6px 10px; font: inherit; cursor: pointer; }
+button.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+button:disabled { opacity: .5; cursor: default; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips button { font-size: 12px; padding: 4px 8px; }
+.cmp { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 560px) { .cmp { grid-template-columns: 1fr; } }
+.cmp .col { border: 1px solid var(--line); border-radius: 8px; padding: 8px; max-height: 340px; overflow-y: auto; min-width: 0; }
+.badge { font-size: 11px; font-weight: 700; padding: 1px 6px; border-radius: 4px; }
+.badge.ok { background: color-mix(in srgb, var(--good) 18%, transparent); color: var(--good); }
+.badge.no { background: color-mix(in srgb, var(--bad) 18%, transparent); color: var(--bad); }
+.samples details { border-top: 1px solid var(--line); padding: 6px 0; }
+.samples summary { cursor: pointer; font-size: 13px; }
+label { font-size: 12px; color: var(--muted); }
+.cue { background: color-mix(in srgb, var(--warn) 30%, transparent); color: var(--warn); font-weight: 700; border-radius: 3px; padding: 0 2px; }
+.seg-up { background: color-mix(in srgb, var(--good) 22%, transparent); }
+.seg-down { background: color-mix(in srgb, var(--bad) 22%, transparent); }
+.seg-flat { background: color-mix(in srgb, var(--muted) 12%, transparent); }
+.cutmark { color: var(--accent); font-weight: 700; }
+.vbar { display: flex; gap: 6px; align-items: flex-end; height: 90px; margin: 8px 0; }
+.vbar div { flex: 1; background: var(--accent); border-radius: 4px 4px 0 0; position: relative; min-height: 2px; }
+.vbar span { position: absolute; top: -17px; left: 0; right: 0; text-align: center; font-size: 11px; color: var(--ink); }
+.vlab { display: flex; gap: 6px; } .vlab div { flex: 1; text-align: center; font-size: 11px; color: var(--muted); }
+.hist { display: grid; grid-template-columns: minmax(0, 1fr) 3fr 30px; gap: 4px 8px; align-items: center; font-size: 12.5px; }
+.hist .bar { height: 14px; border-radius: 3px; background: var(--accent); }
+.tabs { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; }
+.tabs button.on { background: var(--accent); color: #fff; border-color: var(--accent); }
+input[type=text] { background: var(--bg); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 4px 6px; width: 90px; }
+input[type=number] { width: 64px; background: var(--bg); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 4px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>RL Run Monitor</h1>
+  <span class="meta"><span id="live" class="dot"></span><span id="runinfo">loading…</span></span>
+  <span class="meta" id="eta"></span>
+</header>
+<main>
+  <section class="left">
+    <div class="tiles" id="tiles"></div>
+    <div class="panel"><h2>Leaderboard: same 650 never-trained problems (paired big eval)</h2><div id="board" style="overflow-x:auto">loading…</div>
+      <div class="meta" style="margin-top:6px">unseen = 7 never-trained reasoning-gym tasks × 40 problems × 8 samples. Best value per column in bold. Differences under ~3–5 pts are noise.</div>
+      <div id="narrowb" style="margin-top:10px;overflow-x:auto"></div></div>
+    <div class="charts">
+      <div class="panel"><h2>Held-out accuracy (eval)</h2><div class="chart-box"><canvas id="cEval"></canvas></div></div>
+      <div class="panel"><h2>Training reward &amp; accuracy (smoothed)</h2><div class="chart-box"><canvas id="cReward"></canvas></div></div>
+      <div class="panel"><h2>Reasoning behaviours in thinking (% of rollouts)</h2><div class="chart-box"><canvas id="cBeh"></canvas></div></div>
+      <div class="panel"><h2>Output length &amp; think-tag use</h2><div class="chart-box"><canvas id="cLen"></canvas></div></div>
+      <div class="panel"><h2>KL, entropy &amp; kept groups</h2><div class="chart-box"><canvas id="cKl"></canvas></div></div>
+      <div class="panel"><h2>Per-task training accuracy (EMA)</h2><div class="chart-box"><canvas id="cTask"></canvas></div></div>
+      <div class="panel"><h2>Self-seeding: plain vs own-plan accuracy (EMA)</h2><div class="chart-box"><canvas id="cSeed"></canvas></div></div>
+      <div class="panel"><h2>Plan uplift &amp; self-revision rate</h2><div class="chart-box"><canvas id="cUp"></canvas></div></div>
+      <div class="panel"><h2>Branching: continuation accuracy, prefix gain, rescues</h2><div class="chart-box"><canvas id="cBr"></canvas></div></div>
+      <div class="panel"><h2>Tools: code use &amp; backtracking (% of rollouts)</h2><div class="chart-box"><canvas id="cTool"></canvas></div></div>
+      <div class="panel"><h2>Seconds per step</h2><div class="chart-box"><canvas id="cTime"></canvas></div></div>
+    </div>
+    <div class="panel"><h2>Model's own latest strategy plans</h2><div id="plans" class="mono" style="white-space:pre-wrap">none yet</div></div>
+    <div class="panel samples"><h2>Latest training rollouts (verbatim)</h2><div id="samples"></div></div>
+  </section>
+
+  <section class="right">
+    <div class="panel">
+      <h2>Base vs current: recommended prompts</h2>
+      <div class="chips" id="prompts"></div>
+      <div id="cmp" style="margin-top:10px"></div>
+    </div>
+    <div class="panel">
+      <h2>Toy lab</h2>
+      <div class="tabs"><button data-tab="vote" class="on">🗳 Vote (best-of-N)</button><button data-tab="branch">🌿 Branch explorer (V-curve)</button></div>
+      <div class="meta" id="labprob" style="margin-bottom:6px">Problem: click a recommended prompt or “Random test problem” above, or type your own (vote only).</div>
+      <textarea id="labq" placeholder="(optional) your own question for Vote" style="min-height:40px"></textarea>
+      <div class="row" style="margin-top:6px">
+        <label>N / continuations <input type="number" id="labn" value="8" min="2" max="16"></label>
+        <label>temp <input type="number" id="labt" value="0.8" step="0.1" min="0.1" max="1.5"></label>
+        <label id="wantl" style="display:none">trace <select id="want"><option value="any">any</option><option value="wrong">a wrong one</option><option value="correct">a correct one</option></select></label>
+        <label>Model <select id="labm"><option value="current">current</option><option value="base">base</option></select></label>
+        <button class="primary" id="labgo">Run</button>
+      </div>
+      <div id="labout" style="margin-top:10px"></div>
+    </div>
+    <div class="panel">
+      <h2>Chat</h2>
+      <div class="row" style="margin-bottom:8px">
+        <label>Model <select id="which"><option value="current">current checkpoint</option><option value="base">base (LoRA off)</option></select></label>
+        <label>temp <input type="number" id="temp" value="0.7" step="0.1" min="0" max="2"></label>
+        <label>max <input type="number" id="maxtok" value="768" step="64" min="16" max="2048"></label>
+        <label title="0 = off. If the model tries to answer before this many thinking tokens, its answer is cut and the cue is appended.">min think <input type="number" id="minthink" value="0" step="64" min="0" max="1536"></label>
+        <label>cue <input type="text" id="cue" value=" Wait,"></label>
+        <button id="clear">Clear</button>
+      </div>
+      <label>System prompt</label>
+      <textarea id="system" style="min-height:48px"></textarea>
+      <div class="chatlog" id="chatlog" style="margin-top:8px"></div>
+      <div style="margin-top:8px"><textarea id="input" placeholder="Message… (Enter to send, Shift+Enter for newline)"></textarea></div>
+      <div class="row" style="margin-top:6px; justify-content:flex-end"><button class="primary" id="send">Send</button></div>
+    </div>
+  </section>
+</main>
+
+<script>
+const $ = s => document.querySelector(s);
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const charts = {};
+let history = [], busy = false, started = false;
+
+function ema(xs, a = 0.15) { let m = null; return xs.map(x => x == null ? m : (m = m == null ? x : a * x + (1 - a) * m)); }
+
+function mkChart(id, datasets, yfmt, extra = {}) {
+  const ctx = document.getElementById(id);
+  if (charts[id]) { charts[id].data.datasets.forEach((d, i) => { d.data = datasets[i].data; }); charts[id].update('none'); return; }
+  charts[id] = new Chart(ctx, {
+    type: 'line',
+    data: { datasets: datasets.map(d => ({ borderWidth: 2, pointRadius: d.points ? 3 : 0, tension: 0.25, fill: false, ...d })) },
+    options: {
+      animation: false, maintainAspectRatio: false, parsing: false,
+      interaction: { mode: 'nearest', axis: 'x', intersect: false },
+      scales: {
+        x: { type: 'linear', title: { display: true, text: 'step', color: css('--muted') }, ticks: { color: css('--muted') }, grid: { color: css('--line') } },
+        y: { ticks: { color: css('--muted'), callback: yfmt }, grid: { color: css('--line') }, ...(extra.y || {}) },
+        ...(extra.y2 ? { y2: { position: 'right', ticks: { color: css('--muted') }, grid: { display: false }, ...extra.y2 } } : {})
+      },
+      plugins: { legend: { labels: { color: css('--ink'), boxWidth: 10, font: { size: 11 } } },
+                 tooltip: { callbacks: { label: c => `${c.dataset.label}: ${yfmt ? yfmt(c.parsed.y) : c.parsed.y}` } } }
+    }
+  });
+}
+const pct = v => (v * 100).toFixed(1) + '%';
+const pts = (rows, f) => rows.map(r => ({ x: r.step, y: f(r) })).filter(p => p.y != null && !Number.isNaN(p.y));
+
+function tile(k, v, d, dirGood = 1) {
+  const cls = d == null ? '' : (d * dirGood > 0 ? 'up' : d * dirGood < 0 ? 'down' : '');
+  return `<div class="tile"><div class="k">${k}</div><div class="v">${v}</div><div class="d ${cls}">${d == null ? '&nbsp;' : (d > 0 ? '+' : '') + (Math.abs(d) < 1 ? (d * 100).toFixed(1) + ' pts' : d.toFixed(0))} vs step 0</div></div>`;
+}
+
+async function refresh() {
+  let data;
+  try { data = await (await fetch('/api/data')).json(); } catch (e) { $('#live').className = 'dot'; return; }
+  const { log, eval: ev, samples, config, adapter_step } = data;
+  if (!started) { $('#system').value = data.system; started = true; }
+  const last = log[log.length - 1];
+  const fresh = last && (Date.now() / 1000 - data.now) < 5;
+  $('#live').className = 'dot live';
+  const stepsPerHour = log.length > 3 ? 3600 / (log.slice(-20).reduce((a, r) => a + r.t, 0) / Math.min(20, log.length)) : null;
+  $('#runinfo').textContent = `${data.run} · step ${last ? last.step : 0}/${config.steps} · chat model at step ${adapter_step}` +
+    ` · tasks: ${config.tasks.split(',').length} · P=${config.prompts} G=${config.group} · max ${config.max_tokens} tok`;
+  $('#eta').textContent = stepsPerHour ? `${stepsPerHour.toFixed(0)} steps/hour` : '';
+
+  // tiles
+  const evN = ev.length ? ev[ev.length - 1].n_per_task : null;
+  const evs = ev.filter(e => e.n_per_task === evN);        // only comparable evals (same size)
+  const e0 = evs[0], eN = evs[evs.length - 1];
+  const beh = eN ? eN.behaviours : {}, beh0 = e0 ? e0.behaviours : {};
+  $('#tiles').innerHTML = [
+    tile('Held-out math', eN ? pct(eN.math) : '–', e0 && eN && evs.length > 1 ? eN.math - e0.math : null),
+    tile('Trained tasks', eN ? pct(eN.train_tasks_acc) : '–', e0 && evs.length > 1 ? eN.train_tasks_acc - e0.train_tasks_acc : null),
+    tile('Unseen tasks', eN && eN.heldout_tasks_acc != null ? pct(eN.heldout_tasks_acc) : '–', e0 && evs.length > 1 && eN.heldout_tasks_acc != null ? eN.heldout_tasks_acc - e0.heldout_tasks_acc : null),
+    tile('CoT gain (think − no-think)', eN && eN.cot_gain != null ? (eN.cot_gain * 100).toFixed(1) + ' pts' : '–', null),
+    tile('Format OK', eN ? pct(eN.format) : '–', e0 && evs.length > 1 ? eN.format - e0.format : null),
+    tile('Backtracking', eN ? pct(beh.backtracking || 0) : '–', e0 && evs.length > 1 ? (beh.backtracking || 0) - (beh0.backtracking || 0) : null),
+    tile('Verification', eN ? pct(beh.verification || 0) : '–', e0 && evs.length > 1 ? (beh.verification || 0) - (beh0.verification || 0) : null),
+  ].join('');
+
+  const C = ['--s1', '--s2', '--s3', '--s4', '--s5'].map(css);
+  mkChart('cEval', [
+    { label: 'all 8 tasks', data: pts(evs, r => r.math), borderColor: C[0], points: true },
+    { label: 'trained tasks', data: pts(evs, r => r.train_tasks_acc), borderColor: C[1], points: true },
+    { label: 'unseen tasks', data: pts(evs, r => r.heldout_tasks_acc), borderColor: C[2], points: true },
+    { label: 'format ok', data: pts(evs, r => r.format), borderColor: C[3], points: true, borderDash: [4, 3] },
+    { label: 'no-think accuracy', data: pts(evs, r => r.nothink), borderColor: C[4], points: true, borderDash: [2, 2] },
+  ], pct, { y: { min: 0, max: 1 } });
+  const R = ema(log.map(r => r.reward)), A = ema(log.map(r => r.acc_math));
+  mkChart('cReward', [
+    { label: 'reward (EMA)', data: log.map((r, i) => ({ x: r.step, y: R[i] })), borderColor: C[0] },
+    { label: 'rollout accuracy (EMA)', data: log.map((r, i) => ({ x: r.step, y: A[i] })), borderColor: C[1] },
+    { label: 'reward (raw)', data: pts(log, r => r.reward), borderColor: C[0] + '44', borderWidth: 1 },
+  ], v => v.toFixed(2));
+  const bk = ['alternatives', 'verification', 'backtracking', 'subgoals'];
+  mkChart('cBeh', bk.map((k, i) => {
+    const s = ema(log.map(r => r.behaviours[k]), 0.1);
+    return { label: k, data: log.map((r, j) => ({ x: r.step, y: s[j] })), borderColor: C[i] };
+  }), pct, { y: { min: 0 } });
+  mkChart('cLen', [
+    { label: 'avg tokens', data: pts(log, r => r.tokens), borderColor: C[0] },
+    { label: 'think-tag rate', data: pts(log, r => r.think_rate), borderColor: C[2], yAxisID: 'y2' },
+    { label: 'truncated', data: pts(log, r => r.truncated), borderColor: C[4], yAxisID: 'y2' },
+    { label: 'format ok (exact)', data: pts(log, r => r.format_rate), borderColor: C[3], yAxisID: 'y2' },
+    { label: 'think tokens', data: pts(log, r => r.think_tokens), borderColor: C[1] },
+    { label: 'words after tool output', data: pts(log, r => r.post_tool_words), borderColor: C[2] },
+    { label: 'retry after error', data: pts(log, r => r.retry_after_error), borderColor: C[4], yAxisID: 'y2', borderDash: [3, 3] },
+  ], v => v.toFixed(0), { y2: { min: 0, max: 1 } });
+  mkChart('cKl', [
+    { label: 'KL', data: pts(log, r => r.kl), borderColor: C[3] },
+    { label: 'entropy (nats/token)', data: pts(log, r => r.entropy), borderColor: C[0], yAxisID: 'y2' },
+    { label: 'kept groups', data: pts(log, r => r.kept_groups), borderColor: C[1], yAxisID: 'y2' },
+  ], v => v.toFixed(4), { y2: { min: 0 } });
+  const tasks = [...new Set(log.flatMap(r => Object.keys(r.acc_by_task || {})))].sort();
+  if (tasks.length) mkChart('cTask', tasks.map((t, i) => {
+    let m = null;
+    return { label: t, borderColor: C[i % C.length], data: log.filter(r => r.acc_by_task && r.acc_by_task[t] != null)
+      .map(r => ({ x: r.step, y: (m = m == null ? r.acc_by_task[t] : 0.2 * r.acc_by_task[t] + 0.8 * m) })) };
+  }), pct, { y: { min: 0, max: 1 } });
+  if (log.some(r => r.plain_acc != null)) {
+    const P = ema(log.map(r => r.plain_acc), 0.2), Q = ema(log.map(r => r.cond_acc), 0.2);
+    mkChart('cSeed', [
+      { label: 'plain (no plan)', data: log.map((r, i) => ({ x: r.step, y: P[i] })), borderColor: C[0] },
+      { label: 'with own plan', data: log.map((r, i) => ({ x: r.step, y: Q[i] })), borderColor: C[1] },
+    ], pct, { y: { min: 0, max: 1 } });
+    mkChart('cUp', [
+      { label: 'plan uplift', data: pts(log, r => r.plan_uplift), borderColor: C[2] },
+      { label: 'self-revision rate', data: pts(log, r => r.revise_rate), borderColor: C[4], yAxisID: 'y2' },
+      { label: 'plans distinct', data: pts(log, r => r.plan_distinct), borderColor: C[3], yAxisID: 'y2', borderDash: [3, 3] },
+    ], v => v.toFixed(3), { y2: { min: 0, max: 1 } });
+    const lastP = [...log].reverse().find(r => r.plan_examples && r.plan_examples.length);
+    if (lastP) document.getElementById('plans').textContent = `step ${lastP.step}:\n` + lastP.plan_examples.map((p, i) => `${i + 1}. ${p}`).join('\n');
+  }
+  if (log.some(r => r.pr_traces != null)) {
+    const CA = ema(log.map(r => r.pr_cont_acc), 0.2), GA = ema(log.map(r => r.pr_gain), 0.2);
+    mkChart('cBr', [
+      { label: 'continuation accuracy (EMA)', data: log.map((r, i) => ({ x: r.step, y: CA[i] })), borderColor: C[0] },
+      { label: 'prefix gain V(67%)−V(0) (EMA)', data: log.map((r, i) => ({ x: r.step, y: GA[i] })), borderColor: C[2] },
+      { label: 'all-fail problems rescued', data: pts(log, r => r.pr_rescued), borderColor: C[1], yAxisID: 'y2', points: true, showLine: false },
+    ], v => v.toFixed(2), { y2: { min: 0, max: 6 } });
+  }
+  if (log.some(r => r.tool_rate != null)) {
+    const TR = ema(log.map(r => r.tool_rate), 0.2), BR = ema(log.map(r => r.backtrack_rate), 0.2), TC = ema(log.map(r => r.tool_calls), 0.2);
+    mkChart('cTool', [
+      { label: 'uses code (EMA)', data: log.map((r, i) => ({ x: r.step, y: TR[i] })), borderColor: C[0] },
+      { label: 'backtracks (EMA)', data: log.map((r, i) => ({ x: r.step, y: BR[i] })), borderColor: C[1] },
+      { label: 'code calls per answer (EMA)', data: log.map((r, i) => ({ x: r.step, y: TC[i] })), borderColor: C[2], yAxisID: 'y2' },
+    ], pct, { y: { min: 0, max: 1 }, y2: { min: 0 } });
+  }
+  mkChart('cTime', [
+    { label: 'total', data: pts(log, r => r.t), borderColor: C[0] },
+    { label: 'generation', data: pts(log, r => r.t_gen), borderColor: C[1] },
+  ], v => v.toFixed(0), { y: { min: 0 } });
+
+  // samples
+  const esc = s => s.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+  $('#samples').innerHTML = samples.slice().reverse().map(s =>
+    `<details><summary>step ${s.step} · ${s.bucket} · reward ${s.reward.toFixed(2)} (${esc(String(s.why))})</summary>
+     <div class="mono" style="color:var(--muted);margin:6px 0">${esc(s.question)}</div><pre>${esc(s.output)}</pre></details>`).join('') || '<div class="meta">none yet</div>';
+}
+
+// ---- recommended prompts: base vs current
+async function loadPrompts() {
+  const ps = await (await fetch('/api/prompts')).json();
+  const groups = [...new Set(ps.map(p => p.group))];
+  $('#prompts').innerHTML = `<div style="width:100%"><button class="primary" id="rnd">Random test problem (any type)</button></div>` +
+    groups.map(g => `<div style="width:100%;margin-top:6px"><div class="meta" style="font-size:11px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px">${g} (${ps.filter(p => p.group === g).length})</div><div class="chips">` +
+      ps.filter(p => p.group === g).map(p => `<button data-id="${p.id}" title="${p.question.slice(0, 300).replace(/"/g, '&quot;')}">${p.task}</button>`).join('') +
+      `</div></div>`).join('');
+  $('#prompts').querySelectorAll('button[data-id]').forEach(b => b.onclick = () => compare(ps[+b.dataset.id], b));
+  $('#rnd').onclick = async () => { const p = await (await fetch('/api/random')).json(); compare(p, $('#rnd')); };
+}
+let labProblem = null;
+const escH = s => String(s ?? '').replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+function setLabProblem(p) {
+  labProblem = p;
+  $('#labprob').innerHTML = `Problem: <b>${escH(p.task)}</b> — ${escH(p.question.slice(0, 160))}${p.question.length > 160 ? '…' : ''} <span class="meta">(reference: ${escH(p.answer)})</span>`;
+}
+async function compare(p, btn) {
+  setLabProblem(p);
+  const esc = s => s.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+  btn.disabled = true;
+  $('#cmp').innerHTML = `<div class="mono" style="color:var(--muted)">${esc(p.question)}</div><div class="meta" style="margin-top:6px">running base and current (greedy)…</div>`;
+  const r = await (await fetch('/api/compare', { method: 'POST', body: JSON.stringify({ id: p.id }) })).json();
+  const col = (name, x) => `<div class="col"><div class="row" style="margin-bottom:4px"><b>${name}</b>
+     ${x.correct == null ? '' : `<span class="badge ${x.correct ? 'ok' : 'no'}">${x.correct ? 'correct' : 'wrong'}</span>`}
+     <span class="meta">${x.tokens} tok · answer: ${esc(String(x.extracted))}</span></div><pre>${esc(x.text)}</pre></div>`;
+  $('#cmp').innerHTML = `<div class="meta" style="margin-bottom:4px"><b>${esc(p.task)}</b> (held-out test set)</div>
+    <div class="mono" style="color:var(--muted);margin-bottom:6px">${esc(p.question)}</div>
+    ${p.answer ? `<div class="mono" style="margin-bottom:8px"><b>Reference solution:</b> ${esc(p.answer)}</div>` : ''}
+    <div class="cmp">${col('base', r.base)}${col(`current (step ${r.step})`, r.current)}</div>`;
+  btn.disabled = false;
+}
+
+// ---- toy lab
+let labTab = 'vote';
+document.querySelectorAll('.tabs button').forEach(b => b.onclick = () => {
+  labTab = b.dataset.tab;
+  document.querySelectorAll('.tabs button').forEach(x => x.classList.toggle('on', x === b));
+  $('#wantl').style.display = labTab === 'branch' ? '' : 'none';
+  $('#labq').style.display = labTab === 'vote' ? '' : 'none';
+  $('#labn').value = labTab === 'branch' ? 6 : 8; $('#labt').value = labTab === 'branch' ? 0.7 : 0.8;
+});
+const badge = ok => ok == null ? '' : `<span class="badge ${ok ? 'ok' : 'no'}">${ok ? '✓' : '✗'}</span>`;
+$('#labgo').onclick = async () => {
+  const btn = $('#labgo'); btn.disabled = true;
+  const t0 = Date.now(), tick = setInterval(() => { $('#labout').innerHTML = `<div class="meta">running… ${((Date.now() - t0) / 1000).toFixed(0)} s (shares the GPU with training)</div>`; }, 500);
+  try {
+    if (labTab === 'vote') await runVote(); else await runBranch();
+  } catch (e) { $('#labout').innerHTML = `<div class="meta">error: ${escH(e)}</div>`; }
+  clearInterval(tick); btn.disabled = false;
+};
+async function runVote() {
+  const own = $('#labq').value.trim();
+  if (!own && !labProblem) throw 'pick a problem or type a question';
+  const body = { n: +$('#labn').value, temp: +$('#labt').value, adapter: $('#labm').value === 'current' };
+  if (own) body.question = own; else body.id = labProblem.id;
+  const r = await (await fetch('/api/vote', { method: 'POST', body: JSON.stringify(body) })).json();
+  const counts = {}; r.rows.forEach(x => { const k = x.answer ?? '(no answer)'; counts[k] = counts[k] || { n: 0, ok: x.correct }; counts[k].n++; });
+  const ks = Object.keys(counts).sort((a, b) => counts[b].n - counts[a].n), max = counts[ks[0]].n;
+  const nOk = r.rows.filter(x => x.correct).length, maj = ks[0];
+  $('#labout').innerHTML = `<div class="meta" style="margin-bottom:6px">${r.rows.length} samples · ${r.gold ? `reference <b>${escH(r.gold)}</b> · pass@1 ${(100 * nOk / r.rows.length).toFixed(0)}% · any-correct ${nOk ? '✓' : '✗'} · majority <b>${escH(maj)}</b> ${badge(counts[maj].ok)}` : `majority answer <b>${escH(maj)}</b>`}</div>
+    <div class="hist">${ks.map(k => `<div class="mono" title="${escH(k)}">${escH(k.slice(0, 40))} ${badge(counts[k].ok)}</div><div><div class="bar" style="width:${100 * counts[k].n / max}%"></div></div><div>${counts[k].n}</div>`).join('')}</div>
+    ${r.rows.map((x, i) => `<details style="border-top:1px solid var(--line);padding:4px 0"><summary>sample ${i + 1}: ${escH(x.answer ?? '(no answer)')} ${badge(x.correct)}</summary><pre>${escH(x.text)}</pre></details>`).join('')}`;
+}
+async function runBranch() {
+  if (!labProblem) throw 'pick a reasoning problem above first';
+  const r = await (await fetch('/api/branch', { method: 'POST', body: JSON.stringify({ id: labProblem.id, c: +$('#labn').value, temp: +$('#labt').value, want: $('#want').value, adapter: $('#labm').value === 'current' }) })).json();
+  if (r.error) throw r.error;
+  const reas = r.trace.slice(0, r.reasoning_len), tail = r.trace.slice(r.reasoning_len);
+  const pos = [0, ...r.cuts.map(c => c.pos), reas.length];
+  const vals = [r.v0, ...r.cuts.map(c => c.v), r.final ? 1 : 0];
+  const names = ['start', ...r.cuts.map((c, i) => ['25%', '50%', '75%'][i] || ''), 'answer'];
+  let html = '';
+  for (let i = 0; i < pos.length - 1; i++) {
+    const d = vals[i + 1] - vals[i], cls = d > 0.15 ? 'seg-up' : d < -0.15 ? 'seg-down' : 'seg-flat';
+    html += `<span class="${cls}" title="segment ${names[i]}→${names[i + 1]}: V ${vals[i].toFixed(2)} → ${vals[i + 1].toFixed(2)} (${d >= 0 ? '+' : ''}${d.toFixed(2)})">${escH(reas.slice(pos[i], pos[i + 1]))}</span>`;
+    if (i < pos.length - 2) html += `<span class="cutmark">✂${names[i + 1]} V=${vals[i + 1].toFixed(2)}</span>`;
+  }
+  $('#labout').innerHTML = `<div class="meta">reference <b>${escH(r.gold)}</b> · this trace ended ${r.final ? '<b>correct</b>' : '<b>wrong</b>'} · V(start) from 6 fresh tries: ${r.first_tries.map(t => badge(t.correct)).join('')}</div>
+    <div class="vbar">${vals.map(v => `<div style="height:${Math.max(2, v * 100)}%"><span>${v.toFixed(2)}</span></div>`).join('')}</div>
+    <div class="vlab">${names.map(n => `<div>${n}</div>`).join('')}</div>
+    <div class="meta" style="margin:6px 0">V = chance of ending correct when continuing from that point. Segments: <span class="seg-up">raised V</span> <span class="seg-down">lowered V</span> <span class="seg-flat">no change</span>. Rising V = the reasoning is doing real work; flat V = the answer is a fresh dice roll at the end.</div>
+    <pre>${html}<span>${escH(tail)}</span></pre>
+    ${r.cuts.map((c, i) => `<details style="border-top:1px solid var(--line);padding:4px 0"><summary>continuations from ✂${names[i + 1]}: V = ${c.v.toFixed(2)} ${c.conts.map(x => badge(x.correct)).join('')}</summary>${c.conts.map(x => `<div class="meta">→ ${escH(x.answer ?? '(no answer)')} ${badge(x.correct)}</div><pre style="margin-bottom:6px">${escH(x.text)}</pre>`).join('')}</details>`).join('')}`;
+}
+
+// ---- chat (verbatim streaming)
+function addMsg(role, text, foot = '') {
+  const d = document.createElement('div');
+  d.className = 'msg ' + role;
+  d.innerHTML = `<div class="who">${role}</div><pre></pre><div class="foot"></div>`;
+  d.querySelector('pre').textContent = text;
+  d.querySelector('.foot').textContent = foot;
+  $('#chatlog').appendChild(d); $('#chatlog').scrollTop = 1e9;
+  return d;
+}
+function renderSystem() {
+  $('#chatlog').innerHTML = '';
+  if ($('#system').value) addMsg('system', $('#system').value);
+  history.forEach(m => addMsg(m.role, m.content));
+}
+async function send() {
+  const text = $('#input').value; if (!text.trim() || busy) return;
+  busy = true; $('#send').disabled = true; $('#input').value = '';
+  if (!history.length) renderSystem();
+  history.push({ role: 'user', content: text }); addMsg('user', text);
+  const which = $('#which').value;
+  const box = addMsg('assistant', '');
+  box.querySelector('.who').textContent = which === 'base' ? 'assistant · base' : 'assistant · current';
+  const pre = box.querySelector('pre'); let out = '';
+  const minT = +$('#minthink').value;
+  if (minT > 0) {
+    pre.textContent = `thinking (min ${minT} tokens)…`;
+    const r = await (await fetch('/api/think', { method: 'POST', body: JSON.stringify({ messages: history, min_tokens: minT, cue: $('#cue').value,
+      adapter: which === 'current', temp: +$('#temp').value, max_tokens: +$('#maxtok').value }) })).json();
+    let h = '', last = 0;
+    r.events.forEach(e => { h += escH(r.text.slice(last, e.pos)) + `<span class="cue" title="model tried to answer after ${e.tokens} tokens">✂${escH(r.cue)}</span>`; last = e.pos + r.cue.length; });
+    pre.innerHTML = h + escH(r.text.slice(last));
+    box.querySelector('.foot').textContent = `${which === 'base' ? 'base' : 'step ' + r.step} · thinking tokens ${r.think_tokens} · forced continues ${r.events.length} · answer: ${r.answer ?? '(none)'}`;
+    history.push({ role: 'assistant', content: r.text });
+    busy = false; $('#send').disabled = false; return;
+  }
+  const res = await fetch('/api/chat', { method: 'POST', body: JSON.stringify({
+    messages: history, system: $('#system').value, adapter: which === 'current',
+    temp: +$('#temp').value, max_tokens: +$('#maxtok').value }) });
+  const reader = res.body.getReader(), dec = new TextDecoder(); let buf = '';
+  while (true) {
+    const { value, done } = await reader.read(); if (done) break;
+    buf += dec.decode(value, { stream: true });
+    let i; while ((i = buf.indexOf('\n\n')) >= 0) {
+      const line = buf.slice(0, i); buf = buf.slice(i + 2);
+      if (!line.startsWith('data: ')) continue;
+      const m = JSON.parse(line.slice(6));
+      if (m.done) box.querySelector('.foot').textContent = `${which === 'base' ? 'base' : 'step ' + m.step} · ${m.tokens} tok · ${m.tps} tok/s · finish: ${m.finish}`;
+      else { out += m.t; pre.textContent = out; $('#chatlog').scrollTop = 1e9; }
+    }
+  }
+  history.push({ role: 'assistant', content: out });
+  busy = false; $('#send').disabled = false;
+}
+$('#send').onclick = send;
+$('#input').addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); } });
+$('#clear').onclick = () => { history = []; renderSystem(); };
+$('#system').addEventListener('change', () => { history = []; renderSystem(); });
+
+async function loadBoard() {
+  let r; try { r = await (await fetch('/api/results')).json(); } catch (e) { return; }
+  const cols = [['unseen_p1', 'unseen pass@1'], ['unseen_maj', 'unseen maj@8'], ['unseen_pk', 'unseen pass@8'], ['math500', 'MATH-500'], ['gsm8k', 'GSM8K'], ['general', 'general'], ['tokens', 'avg tokens']];
+  const best = {}; cols.forEach(([k]) => { if (k !== 'tokens') best[k] = Math.max(...r.big.map(x => x[k] ?? -1)); });
+  const cell = (x, k) => x[k] == null ? '–' : k === 'tokens' ? x[k].toFixed(0) : `${x[k] === best[k] ? '<b>' : ''}${(100 * x[k]).toFixed(1)}${x[k] === best[k] ? '</b>' : ''}`;
+  $('#board').innerHTML = `<table style="border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums">
+    <tr>${['model', ...cols.map(c => c[1])].map(h => `<th style="text-align:left;padding:4px 8px;border-bottom:1px solid var(--line);color:var(--muted);font-weight:600">${h}</th>`).join('')}</tr>
+    ${r.big.map(x => `<tr><td style="padding:4px 8px;font-weight:600">${escH(x.name)}</td>${cols.map(([k]) => `<td style="padding:4px 8px">${cell(x, k)}</td>`).join('')}</tr>`).join('')}</table>`;
+  const ns = Object.keys(r.narrow);
+  if (ns.length) {
+    const fams = [...new Set(ns.flatMap(n => Object.keys(r.narrow[n])))];
+    $('#narrowb').innerHTML = `<div class="meta" style="margin-bottom:4px">Narrow families (held-out, 30 × 8): pass@1 / pass@8</div><table style="border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums">
+      <tr><th style="text-align:left;padding:4px 8px;color:var(--muted)">model</th>${fams.map(f => `<th style="text-align:left;padding:4px 8px;color:var(--muted)">${f}</th>`).join('')}</tr>
+      ${ns.map(n => `<tr><td style="padding:4px 8px;font-weight:600">${escH(n)}</td>${fams.map(f => { const v = r.narrow[n][f]; return `<td style="padding:4px 8px">${v ? (100 * v.p1).toFixed(0) + ' / ' + (100 * v.pk).toFixed(0) : '–'}</td>`; }).join('')}</tr>`).join('')}</table>`;
+  }
+}
+refresh().then(renderSystem); loadPrompts(); loadBoard(); setInterval(loadBoard, 120000);
+setInterval(refresh, 15000);
+</script>
+</body>
+</html>

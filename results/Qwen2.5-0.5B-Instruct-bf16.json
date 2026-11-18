@@ -1,0 +1,123 @@
+{
+  "model": "Qwen2.5-0.5B-Instruct-bf16",
+  "n_problems": 32,
+  "k": 2,
+  "temp": 0.7,
+  "max_tokens": 256,
+  "overall": {
+    "pass@1": [
+      0.0156,
+      0.0306
+    ],
+    "pass@2": [
+      0.0312,
+      0.0612
+    ],
+    "maj@2": [
+      0.0312,
+      0.0612
+    ],
+    "lenient@1": [
+      0.199,
+      0.1126
+    ],
+    "format": [
+      0.0781,
+      0.0639
+    ],
+    "truncated": [
+      0.0156,
+      0.0306
+    ],
+    "tokens": [
+      51.1406,
+      19.6207
+    ]
+  },
+  "per_task": {
+    "basic_arithmetic": {
+      "pass@1": 0.0,
+      "pass@2": 0.0,
+      "maj@2": 0.0,
+      "lenient@1": 0.25,
+      "format": 0.25,
+      "truncated": 0,
+      "tokens": 86.125
+    },
+    "chain_sum": {
+      "pass@1": 0.0,
+      "pass@2": 0.0,
+      "maj@2": 0.0,
+      "lenient@1": 0.0,
+      "format": 0.25,
+      "truncated": 0,
+      "tokens": 13.875
+    },
+    "countdown": {
+      "pass@1": 0.0,
+      "pass@2": 0.0,
+      "maj@2": 0.0,
+      "lenient@1": 0.05,
+      "format": 0,
+      "truncated": 0,
+      "tokens": 21.875
+    },
+    "simple_equations": {
+      "pass@1": 0.0,
+      "pass@2": 0.0,
+      "maj@2": 0.0,
+      "lenient@1": 0.625,
+      "format": 0,
+      "truncated": 0,
+      "tokens": 143.375
+    },
+    "number_sorting": {
+      "pass@1": 0.0,
+      "pass@2": 0.0,
+      "maj@2": 0.0,
+      "lenient@1": 0.125,
+      "format": 0,
+      "truncated": 0,
+      "tokens": 56.375
+    },
+    "letter_counting": {
+      "pass@1": 0.0,
+      "pass@2": 0.0,
+      "maj@2": 0.0,
+      "lenient@1": 0.125,
+      "format": 0,
+      "truncated": 0,
+      "tokens": 42.75
+    },
+    "gcd": {
+      "pass@1": 0.125,
+      "pass@2": 0.25,
+      "maj@2": 0.25,
+      "lenient@1": 0.417,
+      "format": 0.125,
+      "truncated": 0.125,
+      "tokens": 37.125
+    },
+    "base_conversion": {
+      "pass@1": 0.0,
+      "pass@2": 0.0,
+      "maj@2": 0.0,
+      "lenient@1": 0.0,
+      "format": 0,
+      "truncated": 0,
+      "tokens": 7.625
+    }
+  },
+  "lenient_match_methods": {
+    "phrase": 2,
+    "equals": 10,
+    "last_line": 5,
+    "boxed": 1,
+    "last_number": 3,
+    "tag": 1
+  },
+  "single_stream_tok_s": 140.6,
+  "batch_tok_s": 341.8,
+  "wall_s": 9.6,
+  "peak_mem_gb": 1.81
+}

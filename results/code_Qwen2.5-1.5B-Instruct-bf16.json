@@ -1,0 +1,154 @@
+{
+  "model": "Qwen2.5-1.5B-Instruct-bf16",
+  "k": 4,
+  "max_tokens": 1024,
+  "summary": {
+    "all": {
+      "pass@1": 0.234,
+      "pass@4": 0.374,
+      "has_code": 0.996,
+      "truncated": 0.004,
+      "tokens": 304.967,
+      "n": 628
+    },
+    "source=kodcode": {
+      "pass@1": 0.351,
+      "pass@4": 0.55,
+      "has_code": 0.994,
+      "truncated": 0.005,
+      "tokens": 309.296,
+      "n": 400
+    },
+    "difficulty=medium": {
+      "pass@1": 0.135,
+      "pass@4": 0.235,
+      "has_code": 0.998,
+      "truncated": 0.004,
+      "tokens": 322.545,
+      "n": 204
+    },
+    "kodcode/Taco": {
+      "pass@1": 0.243,
+      "pass@4": 0.446,
+      "has_code": 1,
+      "truncated": 0,
+      "tokens": 296.794,
+      "n": 74
+    },
+    "difficulty=hard": {
+      "pass@1": 0.089,
+      "pass@4": 0.197,
+      "has_code": 0.993,
+      "truncated": 0.005,
+      "tokens": 343.859,
+      "n": 137
+    },
+    "difficulty=easy": {
+      "pass@1": 0.375,
+      "pass@4": 0.557,
+      "has_code": 0.996,
+      "truncated": 0.003,
+      "tokens": 273.906,
+      "n": 287
+    },
+    "kodcode/Filter": {
+      "pass@1": 0.405,
+      "pass@4": 0.556,
+      "has_code": 0.972,
+      "truncated": 0.032,
+      "tokens": 355.488,
+      "n": 63
+    },
+    "kodcode/Docs": {
+      "pass@1": 0.067,
+      "pass@4": 0.154,
+      "has_code": 1,
+      "truncated": 0,
+      "tokens": 402.394,
+      "n": 26
+    },
+    "kodcode/Leetcode": {
+      "pass@1": 0.324,
+      "pass@4": 0.519,
+      "has_code": 1,
+      "truncated": 0,
+      "tokens": 349.722,
+      "n": 27
+    },
+    "kodcode/Prefill": {
+      "pass@1": 0.585,
+      "pass@4": 0.717,
+      "has_code": 1,
+      "truncated": 0,
+      "tokens": 233.623,
+      "n": 53
+    },
+    "kodcode/Codeforces": {
+      "pass@1": 0.203,
+      "pass@4": 0.406,
+      "has_code": 0.977,
+      "truncated": 0,
+      "tokens": 330.242,
+      "n": 32
+    },
+    "kodcode/Code_Contests": {
+      "pass@1": 0.258,
+      "pass@4": 0.438,
+      "has_code": 1,
+      "truncated": 0,
+      "tokens": 312.555,
+      "n": 32
+    },
+    "kodcode/Algorithm": {
+      "pass@1": 0.39,
+      "pass@4": 0.64,
+      "has_code": 1,
+      "truncated": 0,
+      "tokens": 315.22,
+      "n": 25
+    },
+    "kodcode/Data_Structure": {
+      "pass@1": 0.412,
+      "pass@4": 0.735,
+      "has_code": 1,
+      "truncated": 0,
+      "tokens": 299.346,
+      "n": 34
+    },
+    "kodcode/Evol": {
+      "pass@1": 0.575,
+      "pass@4": 1.0,
+      "has_code": 1,
+      "truncated": 0,
+      "tokens": 274.4,
+      "n": 10
+    },
+    "kodcode/Apps": {
+      "pass@1": 0.458,
+      "pass@4": 0.722,
+      "has_code": 1,
+      "truncated": 0,
+      "tokens": 247.583,
+      "n": 18
+    },
+    "kodcode/Package": {
+      "pass@1": 0.458,
+      "pass@4": 0.833,
+      "has_code": 1,
+      "truncated": 0,
+      "tokens": 207.5,
+      "n": 6
+    },
+    "source=leetcode": {
+      "pass@1": 0.031,
+      "pass@4": 0.066,
+      "has_code": 0.999,
+      "truncated": 0.001,
+      "tokens": 297.371,
+      "n": 228
+    }
+  },
+  "gen_min": 47.84240191380183,
+  "grade_min": 1.6016202767690022,
+  "tok_s": 266.87483952702576
+}

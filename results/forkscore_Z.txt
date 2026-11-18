@@ -1,0 +1,20 @@
+answers generated
+scored 28 traces
+model models/Qwen3-1.7B-RL | 28 traces | top-2 tokens forced, 4 continuations each
+method      mean |V1-V2|  gap>=0.5   n
+shannon            0.121      0.11   56
+rao_emb            0.165      0.14   56
+rao_look           0.116      0.09   56
+random             0.147      0.16   56
+(noise floor: two identical choices with C=4 samples differ by ~0.2-0.3 on average)
+look-ahead forks (largest gaps):
+  gap 0.75 number_sequence      ...' we need to identify the pattern of the sequence.\n\n1.' -> ' Ob' (0.76, V=0.00) vs ' The' (0.17, V=0.75)
+  gap 0.75 circuit_logic        ...' 1, we need to evaluate the circuit step by step' -> '.\n\n' (0.44, V=0.75) vs ' using' (0.27, V=0.00)
+  gap 0.50 family_relationships ...'ion of Lucy to George, we can trace the family relationships' -> ' step' (0.55, V=0.50) vs ':\n\n' (0.26, V=0.00)
+  gap 0.50 course_schedule      ..." a directed graph.\n2. **Use Kahn's algorithm (" -> 'Top' (0.50, V=0.50) vs 'B' (0.27, V=1.00)
+  gap 0.50 circuit_logic        ...'1 \\), we need to evaluate the circuit step by step' -> '.\n\n' (0.42, V=0.75) vs ' using' (0.33, V=0.25)
+  gap 0.25 word_sorting         ...'pare each word and arrange them from highest to lowest value' -> '.\n\n' (0.59, V=0.25) vs '.' (0.36, V=0.00)
+  gap 0.25 word_sorting         ...' comparison.\n2. Sort the words based on these ASCII values' -> ' in' (0.41, V=0.00) vs '.\n' (0.32, V=0.25)
+  gap 0.25 word_sorting         ...' "oppose," and "passably" in descending order' -> ' using' (0.44, V=0.00) vs ' based' (0.34, V=0.25)
+  gap 0.25 number_sequence      ...'48, we need to identify the pattern of the sequence' -> '.\n\n' (0.56, V=0.75) vs '.' (0.44, V=1.00)
+  gap 0.25 number_sequence      ...', -4, -8, -16, we' -> ' need' (0.42, V=0.75) vs ' observe' (0.32, V=1.00)

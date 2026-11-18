@@ -1,0 +1,770 @@
+[
+ {
+  "task": "basic_arithmetic",
+  "q": "Calculate -7 + -6 * -9 + 2 / 2.",
+  "gold": "48",
+  "out": "11"
+ },
+ {
+  "task": "basic_arithmetic",
+  "q": "Calculate 1433 * 4201 + 9488 + 3479 * 1389.",
+  "gold": "10861852",
+  "out": "1433 * 4201 + 9488 + 3479 * 1389 = 1433 * 4201 + 9488 + 3479 * 1389 = 1433 * 4201 + 9488 + 3479 * 1389 = 1433 * 4201 + 9488 + 3479 * 1389 = 1433 * 4201 + 9488 + 3479 * 1389 = 1433 * 4201 + 9488 + 3479 * 1389 = 1433 * 4201 + 9488 + 3479 * 1389 = 1433 * 4201 + 9488 + 3479 * 1389 = 1433 * 4201 + 9488 + 3479 * 1389 = 1433 * 4201 + 9488 + 3479 * 1389 = 1433 * 4201 + 9488 + 3479 * 1389 = 1433 * 4201 + 9488 + 3479 * 1389 = 1433 * 4201 + 9488 + 3479 * 1389 = 1433 * 4201 + 9488 + 3479 * 1389 = 1433 * 4201 + 9488 + 3479 * 1389 = 1433 * 4201 + 9488 + 3479 * 1389 = 1433 * 4201 + 9488 + 3479 * 1389 = 14"
+ },
+ {
+  "task": "basic_arithmetic",
+  "q": "Calculate -( 846 * -6489 * 3237 * -92 + -8651 / 8651 ).",
+  "gold": "-1634852831975",
+  "out": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+ },
+ {
+  "task": "basic_arithmetic",
+  "q": "Calculate -2533 - 6386 * 3588.",
+  "gold": "-22915501",
+  "out": "14111"
+ },
+ {
+  "task": "basic_arithmetic",
+  "q": "Calculate 1575 * 1387.",
+  "gold": "2184525",
+  "out": "1575 * 1387 = 2169675"
+ },
+ {
+  "task": "basic_arithmetic",
+  "q": "Calculate ( 313 + -345 ).",
+  "gold": "-32",
+  "out": "132"
+ },
+ {
+  "task": "basic_arithmetic",
+  "q": "Calculate -( -37 + -441 * 963 * 528 / 264 ).",
+  "gold": "849403",
+  "out": "1000000"
+ },
+ {
+  "task": "basic_arithmetic",
+  "q": "Calculate -3604 * 6084 - 4965 - -3606 - 2624 / 4.",
+  "gold": "-21928751",
+  "out": "1800000"
+ },
+ {
+  "task": "basic_arithmetic",
+  "q": "Calculate -127 + 299.",
+  "gold": "172",
+  "out": "The answer is 182."
+ },
+ {
+  "task": "basic_arithmetic",
+  "q": "Calculate 158 * -52 - 885 + 483 * 269 + -985.",
+  "gold": "119841",
+  "out": "158 * -52 - 885 + 483 * 269 + -985 = 158 * -52 - 885 + 483 * 269 - 985 = 158 * -52 + 483 * 269 - 885 - 985 = 158 * -52 + 483 * 269 - 1870 = 158 * -52 + 483 * 269 - 1870 = 158 * -52 + 483 * 269 - 1870 = 158 * -52 + 483 * 269 - 1870 = 158 * -52 + 483 * 269 - 1870 = 158 * -52 + 483 * 269 - 1870 = 158 * -52 + 483 * 269 - 1870 = 158 * -52 + 483 * 269 - 1870 = 158 * -52 + 483 * 269 - 1870 = 158 * -52 + 483 * 269 - 1870 = 158 * -52 + 483 * 269 - 1870 = 158 * -52 + 483 * 269 - 1870 = 158 * -52 + 483 * 269 - 1870 = 158 * -52 + 483 * 269 - 1870 = 158 * -52 + 483 * 269 - 1870 = 158 * -52 + 483 * 269 - 1870 = 158 * -52 + 483 * 269 - 1870 = "
+ },
+ {
+  "task": "basic_arithmetic",
+  "q": "Calculate ( ( -3 - -7 - -6 ) - 8 ).",
+  "gold": "2",
+  "out": "11"
+ },
+ {
+  "task": "basic_arithmetic",
+  "q": "Calculate 60 - 19 + -84 - -66 - -( 45 * 43 ).",
+  "gold": "1958",
+  "out": "60 - 19 + -84 - -66 - -( 45 * 43 ) = 60 - 19 + -84 - 66 + 45 * 43 = 60 - 19 + -84 - 66 + 45 * 43 = 60 - 19 + -84 - 66 + 45 * 43 = 60 - 19 + -84 - 66 + 45 * 43 = 60 - 19 + -84 - 66 + 45 * 43 = 60 - 19 + -84 - 66 + 45 * 43 = 60 - 19 + -84 - 66 + 45 * 43 = 60 - 19 + -84 - 66 + 45 * 43 = 60 - 19 + -84 - 66 + 45 * 43 = 60 - 19 + -84 - 66 + 45 * 43 = 60 - 19 + -84 - 66 + 45 * 43 = 60 - 19 + -84 - 66 + 45 * 43 = 60 - 19 + -84 - 66 + 45 * 43 = 60 - 19 + -84 - 66 + 45 * 43 = 60 - 19 + -84 - 66 + 45 * 43 = 60 - 19 + -84 - 66 + 45 * 43 = 60 - 19 + -84 - 66 + 45 * 43 = 60 - 19 + -84 - 66 + 45 * 43 = 60 - 19 + -84 - 66 + 45 * 43 = 60 - 19 + -84 - 66 + 45 * 43 = 60 - 19"
+ },
+ {
+  "task": "basic_arithmetic",
+  "q": "Calculate 9 - -8 + 9.",
+  "gold": "26",
+  "out": "9 - -8 + 9 = 17"
+ },
+ {
+  "task": "basic_arithmetic",
+  "q": "Calculate -( -2 - 3 ).",
+  "gold": "5",
+  "out": "The final answer is 5."
+ },
+ {
+  "task": "basic_arithmetic",
+  "q": "Calculate -( ( -16 * 38 ) - 24 ) * 0 - 61 * 2.",
+  "gold": "-122",
+  "out": "148"
+ },
+ {
+  "task": "basic_arithmetic",
+  "q": "Calculate 0 - -31 - -34 + 70 * 80 + -59.",
+  "gold": "5606",
+  "out": "0"
+ },
+ {
+  "task": "chain_sum",
+  "q": "State the final answer to the following arithmetic problem: 0 + 1 - 9 + 0 + 1 =",
+  "gold": "-7",
+  "out": "0"
+ },
+ {
+  "task": "chain_sum",
+  "q": "State the final answer to the following arithmetic problem: 7408 + 3443 - 6716 - 8100 - 4489 =",
+  "gold": "-8454",
+  "out": "15055"
+ },
+ {
+  "task": "chain_sum",
+  "q": "State the final answer to the following arithmetic problem: 8815 - 5286 - 9458 + 6422 + 9767 + 2755 =",
+  "gold": "13015",
+  "out": "15000"
+ },
+ {
+  "task": "chain_sum",
+  "q": "State the final answer to the following arithmetic problem: 6069 - 4932 - 4733 =",
+  "gold": "-3596",
+  "out": "10000"
+ },
+ {
+  "task": "chain_sum",
+  "q": "State the final answer to the following arithmetic problem: 4475 - 6787 =",
+  "gold": "-2312",
+  "out": "1224"
+ },
+ {
+  "task": "chain_sum",
+  "q": "State the final answer to the following arithmetic problem: 566 + 125 =",
+  "gold": "691",
+  "out": "566 + 125 = 681"
+ },
+ {
+  "task": "chain_sum",
+  "q": "State the final answer to the following arithmetic problem: 697 - 630 - 639 - 146 + 508 =",
+  "gold": "-210",
+  "out": "1000"
+ },
+ {
+  "task": "chain_sum",
+  "q": "State the final answer to the following arithmetic problem: 4465 - 5619 - 5146 + 4197 - 9041 - 4469 =",
+  "gold": "-15613",
+  "out": "10000"
+ },
+ {
+  "task": "chain_sum",
+  "q": "State the final answer to the following arithmetic problem: 951 + 484 =",
+  "gold": "1435",
+  "out": "1435"
+ },
+ {
+  "task": "chain_sum",
+  "q": "State the final answer to the following arithmetic problem: 700 - 119 + 538 + 678 + 620 + 573 =",
+  "gold": "2990",
+  "out": "1500"
+ },
+ {
+  "task": "chain_sum",
+  "q": "State the final answer to the following arithmetic problem: 7 - 8 - 6 - 5 =",
+  "gold": "-12",
+  "out": "10"
+ },
+ {
+  "task": "chain_sum",
+  "q": "State the final answer to the following arithmetic problem: 14 - 89 + 26 + 53 - 54 + 90 =",
+  "gold": "40",
+  "out": "14 - 89 + 26 + 53 - 54 + 90 = 14 - 89 + 26 + 53 - 54 + 90 = 14 - 89 + 26 + 53 - 54 + 90 = 14 - 89 = -75."
+ },
+ {
+  "task": "chain_sum",
+  "q": "State the final answer to the following arithmetic problem: 8 - 2 + 9 =",
+  "gold": "15",
+  "out": "8 - 2 = 6\n6 + 9 = 15\n15 - 8 = 7\nTherefore, the final answer is 7."
+ },
+ {
+  "task": "chain_sum",
+  "q": "State the final answer to the following arithmetic problem: 5 - 8 =",
+  "gold": "-3",
+  "out": "5 - 8 = -3"
+ },
+ {
+  "task": "chain_sum",
+  "q": "State the final answer to the following arithmetic problem: 53 + 60 - 57 - 54 - 97 + 86 =",
+  "gold": "-9",
+  "out": "53 + 60 - 57 - 54 - 97 + 86 = 100 - 57 - 54 - 97 + 86 = 43 - 54 - 97 + 86 = -11 - 97 + 86 = -108 + 86 = -22."
+ },
+ {
+  "task": "chain_sum",
+  "q": "State the final answer to the following arithmetic problem: 94 - 30 - 32 + 59 + 63 + 44 =",
+  "gold": "198",
+  "out": "180"
+ },
+ {
+  "task": "countdown",
+  "q": "Calculate 126 using all of these numbers: 3, 3, 3, 45, 83.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+  "gold": "3/3 - 3 + 45 + 83",
+  "out": "3 * 3 * 3 * 3 * 3 / 45 / 83 = 36"
+ },
+ {
+  "task": "countdown",
+  "q": "Using all the numbers 79, 97, 2, 23, 24, 90, create an expression that equals 111.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+  "gold": "24 + 97 + 2 + 90 - 79 - 23",
+  "out": "79 * 97 / 2 + 23 / 24 = 111"
+ },
+ {
+  "task": "countdown",
+  "q": "Calculate 201 using all of these numbers: 23, 6, 80, 86, 80, 99.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+  "gold": "99 + 80 + 23 + (6 - 86)/80",
+  "out": "201 = 23 / 6 + 80 / 80 + 86 / 80 + 99 / 80"
+ },
+ {
+  "task": "countdown",
+  "q": "Calculate 140 using all of these numbers: 41, 74, 63, 38.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+  "gold": "41 + 63 + 74 - 38",
+  "out": "41 / 74 * 63 + 38 = 140"
+ },
+ {
+  "task": "countdown",
+  "q": "Using all the numbers 20, 10, 52, 88, create an expression that equals 236.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+  "gold": "20*10 + 88 - 52",
+  "out": "20 * 10 / 52 + 88 = 236"
+ },
+ {
+  "task": "countdown",
+  "q": "Calculate 642 using all of these numbers: 68, 98, 75, 44.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+  "gold": "98*(75 - 68) - 44",
+  "out": "642 = 68 * 98 / 75 / 44"
+ },
+ {
+  "task": "countdown",
+  "q": "Find a way to make 556 using all of these numbers: 3, 3, 64, 70, 73, 89.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+  "gold": "-3 + (70*(89 - 64) - 73)/3",
+  "out": "3 * 3 * 64 / 70 * 73 / 89 = 556"
+ },
+ {
+  "task": "countdown",
+  "q": "Find a way to make 576 using all of these numbers: 96, 4, 32, 4, 18, 4.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+  "gold": "18*4*(32 + 96)/(4*4)",
+  "out": "96 * 4 / 4 * 32 / 4 + 4 / 4 = 576"
+ },
+ {
+  "task": "countdown",
+  "q": "Find a way to make 184 using all of these numbers: 51, 26, 17, 90.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+  "gold": "26 + 90 + 17 + 51",
+  "out": "51 / 26 * 17 + 90 = 184"
+ },
+ {
+  "task": "countdown",
+  "q": "Calculate 423 using all of these numbers: 10, 23, 60, 57, 51, 89.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+  "gold": "51*(10 + 57 - 60) + 89 - 23",
+  "out": "10 / 23 * 60 + 57 / 51 = 89"
+ },
+ {
+  "task": "countdown",
+  "q": "Calculate 720 using all of these numbers: 12, 63, 71, 90, 17.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+  "gold": "63*12 + 71 - 90 - 17",
+  "out": "12 / 63 * 71 + 90 / 17 = 720"
+ },
+ {
+  "task": "countdown",
+  "q": "Using all the numbers 12, 30, 12, 66, 93, 68, create an expression that equals 290.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+  "gold": "66*(68 - 30)/12 + 93 - 12",
+  "out": "12 * 66 / 68 + 30 = 290"
+ },
+ {
+  "task": "countdown",
+  "q": "Find a way to make 467 using all of these numbers: 17, 8, 94, 68.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+  "gold": "8*68 + 17 - 94",
+  "out": "17 / 8 = 2 remainder 19\n8 / 94 = 0 remainder 8\n94 / 68 = 1 remainder 26\n68 / 8 = 8 remainder 6\n467 = 2 * 8 + 6 * 1 + 94 * 0 + 94 * 19 / 8 = 2 * 8 + 6 * 1 + 94 * 0 + 94 * 19 / 8 = 2 * 8 + 6 * 1 + 94 * 0 + 94 * 19 / 8 = 2 * 8 + 6 * 1 + 94 * 0 + 94 * 19 / 8 = 2 * 8 + 6 * 1 + 94 * 0 + 94 * 19 / 8 = 2 * 8 + 6 * 1 + 94 * 0 + 94 * 19 / 8 = 2 * 8 + 6 * 1 + 94 * 0 + 94 * 19 / 8 = 2 * 8 + 6 * 1 + 94 * 0 + 94 * 19 / 8 = 2 * 8 + 6 * 1 + 94 * 0 + 94 * 19 / 8 = 2 * 8 + 6 * 1 + 94 * 0 + 94 * 19 / 8 = 2 * 8 + 6 * 1 + 94 * 0 + 94 * 19 / 8 = 2 * 8 + 6 * 1 + 94 * 0 + 94 * 19 / 8 = 2 * 8 + 6 * 1 + 94 * 0 + 94 * 19 / 8 = 2 * 8 + 6 * 1 + 94 * 0 + 94 * 19 / 8 = 2 * 8 + 6 * 1 + 94 * 0 + 94 * 19 / 8 = 2 * 8 + "
+ },
+ {
+  "task": "countdown",
+  "q": "Find a way to make 587 using all of these numbers: 31, 20, 33, 1.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+  "gold": "20*31/1 - 33",
+  "out": "31 * 20 / 33 + 1 = 587"
+ },
+ {
+  "task": "countdown",
+  "q": "Using all the numbers 42, 8, 92, 30, 55, 28, create an expression that equals 732.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+  "gold": "55*(42 - 30) + 8 - 28 + 92",
+  "out": "42 * 8 / 92 + 30 * 55 - 28 = 732"
+ },
+ {
+  "task": "countdown",
+  "q": "Find a way to make 925 using all of these numbers: 7, 52, 61, 39, 56, 53.\nEach number can only be used once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+  "gold": "61*(56 - 39) - 53 - 7 - 52",
+  "out": "56 * 53 / 53 * 56 / 56 * 53 / 56 = 925"
+ },
+ {
+  "task": "simple_equations",
+  "q": "Solve for y: 5*y + 14 = 509",
+  "gold": "99",
+  "out": "5*y + 14 = 509\n5*y = 509 - 14\n5*y = 495\ny = 495/5\ny = 99\nTherefore, the answer is y = 99."
+ },
+ {
+  "task": "simple_equations",
+  "q": "Solve for w: 1380*w + 61 = 114601",
+  "gold": "83",
+  "out": "1380*w = 114601 - 61 = 11390\nw = 11390/1380 = 8.5"
+ },
+ {
+  "task": "simple_equations",
+  "q": "Solve for r: -34*r - 4 = -2384",
+  "gold": "70",
+  "out": "18.0"
+ },
+ {
+  "task": "simple_equations",
+  "q": "Find the value of e in the equation: 10 - 65*e = -3500",
+  "gold": "54",
+  "out": "10 - 65*e = -3500\n65*e = 10 - 3500\n65*e = -3490\ne = -3490/65\ne = -5.28"
+ },
+ {
+  "task": "simple_equations",
+  "q": "Solve for a: 3404*a = 153180",
+  "gold": "45",
+  "out": "153180/3404 = 45"
+ },
+ {
+  "task": "simple_equations",
+  "q": "Solve for c: 62*c - 11 = 2531",
+  "gold": "41",
+  "out": "50.00000000000001"
+ },
+ {
+  "task": "simple_equations",
+  "q": "Solve for u: 6*u + 121 = 211",
+  "gold": "15",
+  "out": "6*u + 121 = 211\n6*u = 211 - 121\n6*u = 90\nu = 90/6\nu = 15"
+ },
+ {
+  "task": "simple_equations",
+  "q": "Solve for t: 3 - 25*t = -2272",
+  "gold": "91",
+  "out": "18"
+ },
+ {
+  "task": "simple_equations",
+  "q": "Determine the value of c that satisfies: 3*c - 23 = 40",
+  "gold": "21",
+  "out": "5"
+ },
+ {
+  "task": "simple_equations",
+  "q": "Determine the value of x that satisfies: 12474*x = 997920",
+  "gold": "80",
+  "out": "12474*x = 997920\nx = 997920/12474\nx = 78\nTherefore, the answer is 78."
+ },
+ {
+  "task": "simple_equations",
+  "q": "Solve for i: 3465 - 47*i = 1585",
+  "gold": "40",
+  "out": "1290*i = 1970\ni = 1970/1290\ni = 1.5"
+ },
+ {
+  "task": "simple_equations",
+  "q": "Determine the value of r that satisfies: 45*r - 1 = 1304",
+  "gold": "29",
+  "out": "To determine the value of r that satisfies the equation 45*r - 1 = 1304, we need to isolate r on one side of the equation. We can do this by following these steps:\n\n1. Add 1 to both sides of the equation to isolate the term containing r on the left side:\n   45*r - 1 + 1 = 1304 + 1\n   45*r = 1305\n\n2. Divide both sides of the equation by 45 to isolate r:\n   45*r / 45 = 1305 / 45\n   r = 1305 / 45\n\n3. Perform the division:\n   r = 31\n\nTherefore, the value of r that satisfies the equation is 31.\n\nAnswer: 31"
+ },
+ {
+  "task": "simple_equations",
+  "q": "Determine the value of f that satisfies: 408*f = 31824",
+  "gold": "78",
+  "out": "12"
+ },
+ {
+  "task": "simple_equations",
+  "q": "Find the value of y in the equation: 11 - 95*y = -749",
+  "gold": "8",
+  "out": "11 - 95*y = -749\n11 + 749 = 95*y\n760 = 95*y\ny = 760/95\ny = 8"
+ },
+ {
+  "task": "simple_equations",
+  "q": "Solve for s: 48*s + 101 = 2021",
+  "gold": "40",
+  "out": "50"
+ },
+ {
+  "task": "simple_equations",
+  "q": "Solve for q: 50*q - 21 = 2879",
+  "gold": "58",
+  "out": "50*q = 2879 + 21\n50*q = 2890\nq = 2890/50\nq = 57.8"
+ },
+ {
+  "task": "number_sorting",
+  "q": "Sort these numbers in descending order: -77.0, 82.2, -93.01, -83.2, -53.0, 97.0, -30.78, -3.2, -70.0, 43.0\nPlease follow the instruction below:\n## 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n## 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n",
+  "gold": "['97.0', '82.2', '43.0', '-3.2', '-30.78', '-53.0', '-70.0', '-77.0', '-83.2', '-93.01']",
+  "out": "[-69, -13, 1, 7, 11, 43, 59, 61]"
+ },
+ {
+  "task": "number_sorting",
+  "q": "Sort these numbers in ascending order: 7.09, -6.0, 90.8, 44.1, -57.0, -17.7, -11.26, -7.1, 52.4\nPlease follow the instruction below:\n## 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n## 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n",
+  "gold": "['-57.0', '-17.7', '-11.26', '-7.1', '-6.0', '7.09', '44.1', '52.4', '90.8']",
+  "out": "[-69, -13, 1, 7, 11, 43, 59, 61]"
+ },
+ {
+  "task": "number_sorting",
+  "q": "Sort these numbers in ascending order: 48.0, -47.7, 7.02, 62.07, -40.0, -91.8, 60.98, -65.62, -15.85, 57.5\nPlease follow the instruction below:\n## 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n## 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n",
+  "gold": "['-91.8', '-65.62', '-47.7', '-40.0', '-15.85', '7.02', '48.0', '57.5', '60.98', '62.07']",
+  "out": "[-69, -13, 1, 7, 11, 43, 59, 61]"
+ },
+ {
+  "task": "number_sorting",
+  "q": "Sort these numbers in ascending order: 77.4, -52.0, -29.74, -29.2, -17.0\nPlease follow the instruction below:\n## 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n## 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n",
+  "gold": "['-52.0', '-29.74', '-29.2', '-17.0', '77.4']",
+  "out": "[-69, -13, 1, 7, 11, 43, 59, 61]"
+ },
+ {
+  "task": "number_sorting",
+  "q": "Sort these numbers in descending order: -1.5, 99.81, -28.49\nPlease follow the instruction below:\n## 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n## 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n",
+  "gold": "['99.81', '-1.5', '-28.49']",
+  "out": "[-69, -13, 1, 7, 11, 43, 59, 61]"
+ },
+ {
+  "task": "number_sorting",
+  "q": "Sort these numbers in ascending order: -44.0, -90.4, -3.69, -68.6\nPlease follow the instruction below:\n## 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n## 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n",
+  "gold": "['-90.4', '-68.6', '-44.0', '-3.69']",
+  "out": "[-69, -13, 1, 7, 11, 43, 59, 61]"
+ },
+ {
+  "task": "number_sorting",
+  "q": "Sort these numbers in ascending order: -28.9, 97.0, -20.3, -6.0, 16.6, 49.18, 69.0, 21.5, 68.0, -60.5\nPlease follow the instruction below:\n## 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n## 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n",
+  "gold": "['-60.5', '-28.9', '-20.3', '-6.0', '16.6', '21.5', '49.18', '68.0', '69.0', '97.0']",
+  "out": "[-69, -13, 1, 7, 11, 43, 59, 61]"
+ },
+ {
+  "task": "number_sorting",
+  "q": "Sort these numbers in ascending order: 52.9, -49.0, 42.43, 47.36, 41.8, -89.5, 95.0, -23.0, -74.0, 36.0\nPlease follow the instruction below:\n## 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n## 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n",
+  "gold": "['-89.5', '-74.0', '-49.0', '-23.0', '36.0', '41.8', '42.43', '47.36', '52.9', '95.0']",
+  "out": "[-69, -13, 1, 7, 11, 43, 59, 61]"
+ },
+ {
+  "task": "number_sorting",
+  "q": "Sort these numbers in descending order: 7.1, -76.3, -96.12, -2.0\nPlease follow the instruction below:\n## 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n## 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n",
+  "gold": "['7.1', '-2.0', '-76.3', '-96.12']",
+  "out": "[-69, -13, 1, 7, 11, 43, 59, 61]"
+ },
+ {
+  "task": "number_sorting",
+  "q": "Sort these numbers in ascending order: 91.44, -96.18, 1.7, 84.06, 96.72, 39.0, -98.6, -5.0\nPlease follow the instruction below:\n## 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n## 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n",
+  "gold": "['-98.6', '-96.18', '-5.0', '1.7', '39.0', '84.06', '91.44', '96.72']",
+  "out": "[-69, -13, 1, 7, 11, 43, 59, 61]"
+ },
+ {
+  "task": "number_sorting",
+  "q": "Sort these numbers in ascending order: 13.98, -75.7, 9.7, 4.51, -11.8, -28.14, -61.0\nPlease follow the instruction below:\n## 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n## 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n",
+  "gold": "['-75.7', '-61.0', '-28.14', '-11.8', '4.51', '9.7', '13.98']",
+  "out": "[-69, -13, 1, 7, 11, 43, 59, 61]"
+ },
+ {
+  "task": "number_sorting",
+  "q": "Sort these numbers in descending order: -93.0, -31.39, -7.0, -17.0, 8.51\nPlease follow the instruction below:\n## 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n## 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n",
+  "gold": "['8.51', '-7.0', '-17.0', '-31.39', '-93.0']",
+  "out": "[-69, -13, 1, 7, 11, 43, 59, 61]"
+ },
+ {
+  "task": "number_sorting",
+  "q": "Sort these numbers in ascending order: -88.0, 46.3, -92.0, 21.1, -73.4\nPlease follow the instruction below:\n## 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n## 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n",
+  "gold": "['-92.0', '-88.0', '-73.4', '21.1', '46.3']",
+  "out": "[-69, -13, 1, 7, 11, 43, 59, 61]"
+ },
+ {
+  "task": "number_sorting",
+  "q": "Sort these numbers in descending order: -84.1, 52.3, 72.73, -24.0\nPlease follow the instruction below:\n## 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n## 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n",
+  "gold": "['72.73', '52.3', '-24.0', '-84.1']",
+  "out": "[-69, -13, 1, 7, 11, 43, 59, 61]"
+ },
+ {
+  "task": "number_sorting",
+  "q": "Sort these numbers in ascending order: -32.77, 51.7, -30.15, 47.7, 90.9, -39.0\nPlease follow the instruction below:\n## 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n## 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n",
+  "gold": "['-39.0', '-32.77', '-30.15', '47.7', '51.7', '90.9']",
+  "out": "[-69, -13, 1, 7, 11, 43, 59, 61]"
+ },
+ {
+  "task": "number_sorting",
+  "q": "Sort these numbers in descending order: 32.0, 83.2, -46.3, 86.0, 32.19, -73.0\nPlease follow the instruction below:\n## 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n## 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n",
+  "gold": "['86.0', '83.2', '32.19', '32.0', '-46.3', '-73.0']",
+  "out": "[-69, -13, 1, 7, 11, 43, 59, 61]"
+ },
+ {
+  "task": "letter_counting",
+  "q": "How many times does the letter \"a\" appear in the text: \"story The scene where the village maid discusses interesting philosophical problems with\"?",
+  "gold": "3",
+  "out": "4"
+ },
+ {
+  "task": "letter_counting",
+  "q": "How many times does the letter \"w\" appear in the text: \"years he produced and distributed Project Gutenberg eBooks with only a\"?",
+  "gold": "1",
+  "out": "2"
+ },
+ {
+  "task": "letter_counting",
+  "q": "How many times does the letter \"r\" appear in the text: \"DAMAGE 1 F 3 LIMITED RIGHT OF REPLACEMENT OR REFUND If you discover\"?",
+  "gold": "5",
+  "out": "1"
+ },
+ {
+  "task": "letter_counting",
+  "q": "How many times does the letter \"h\" appear in the text: \"derivative works based on the work as\"?",
+  "gold": "1",
+  "out": "2"
+ },
+ {
+  "task": "letter_counting",
+  "q": "How many times does the letter \"e\" appear in the text: \"be interpreted to make the\"?",
+  "gold": "6",
+  "out": "1"
+ },
+ {
+  "task": "letter_counting",
+  "q": "How many times does the letter \"o\" appear in the text: \"we shall be able to produce\"?",
+  "gold": "2",
+  "out": "4"
+ },
+ {
+  "task": "letter_counting",
+  "q": "How many times does the letter \"k\" appear in the text: \"manager of the Project Gutenberg trademark Contact the Foundation as set forth in Section 3\"?",
+  "gold": "1",
+  "out": "1"
+ },
+ {
+  "task": "letter_counting",
+  "q": "How many times does the letter \"i\" appear in the text: \"works in accordance with this agreement and any volunteers associated with the production promotion\"?",
+  "gold": "7",
+  "out": "1"
+ },
+ {
+  "task": "letter_counting",
+  "q": "How many times does the letter \"p\" appear in the text: \"forty years he produced and distributed\"?",
+  "gold": "1",
+  "out": "4"
+ },
+ {
+  "task": "letter_counting",
+  "q": "How many times does the letter \"u\" appear in the text: \"of the Project Gutenberg trademark If you do not charge anything for copies\"?",
+  "gold": "2",
+  "out": "1"
+ },
+ {
+  "task": "letter_counting",
+  "q": "How many times does the letter \"u\" appear in the text: \"not a picture of life it lacks the elements\"?",
+  "gold": "1",
+  "out": "2"
+ },
+ {
+  "task": "letter_counting",
+  "q": "How many times does the letter \"f\" appear in the text: \"www gutenberg org donate While we cannot and do not solicit contributions from\"?",
+  "gold": "1",
+  "out": "1"
+ },
+ {
+  "task": "letter_counting",
+  "q": "How many times does the letter \"n\" appear in the text: \"the name of Earth Chronicle Unfortunately it\"?",
+  "gold": "4",
+  "out": "1"
+ },
+ {
+  "task": "letter_counting",
+  "q": "How many times does the letter \"s\" appear in the text: \"his door entreating his counsels begging\"?",
+  "gold": "4",
+  "out": "4"
+ },
+ {
+  "task": "letter_counting",
+  "q": "How many times does the letter \"u\" appear in the text: \"was created to provide a secure and permanent future for Project Gutenberg and future\"?",
+  "gold": "6",
+  "out": "4"
+ },
+ {
+  "task": "letter_counting",
+  "q": "How many times does the letter \"g\" appear in the text: \"Gibraltar With this sally the audience ended The clock was striking twelve the\"?",
+  "gold": "2",
+  "out": "3"
+ },
+ {
+  "task": "gcd",
+  "q": "Find the Greatest Common Divisor (GCD) of these numbers: 120, 8. Give only the GCD as your final answer.",
+  "gold": "8",
+  "out": "20"
+ },
+ {
+  "task": "gcd",
+  "q": "Find the Greatest Common Divisor (GCD) of these numbers: 739, 662. Give only the GCD as your final answer.",
+  "gold": "1",
+  "out": "219"
+ },
+ {
+  "task": "gcd",
+  "q": "Find the Greatest Common Divisor (GCD) of these numbers: 548, 110. Give only the GCD as your final answer.",
+  "gold": "2",
+  "out": "26"
+ },
+ {
+  "task": "gcd",
+  "q": "Find the Greatest Common Divisor (GCD) of these numbers: 246, 974. Give only the GCD as your final answer.",
+  "gold": "2",
+  "out": "246 and 974 have a GCD of 26."
+ },
+ {
+  "task": "gcd",
+  "q": "Find the Greatest Common Divisor (GCD) of these numbers: 102, 736. Give only the GCD as your final answer.",
+  "gold": "2",
+  "out": "11"
+ },
+ {
+  "task": "gcd",
+  "q": "Find the Greatest Common Divisor (GCD) of these numbers: 50, 105. Give only the GCD as your final answer.",
+  "gold": "5",
+  "out": "20"
+ },
+ {
+  "task": "gcd",
+  "q": "Find the Greatest Common Divisor (GCD) of these numbers: 482, 117. Give only the GCD as your final answer.",
+  "gold": "1",
+  "out": "24"
+ },
+ {
+  "task": "gcd",
+  "q": "Find the Greatest Common Divisor (GCD) of these numbers: 260, 955. Give only the GCD as your final answer.",
+  "gold": "5",
+  "out": "260 = 2 \u00d7 130 = 2 \u00d7 2 \u00d7 65 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7 13 = 2 \u00d7 2 \u00d7 5 \u00d7"
+ },
+ {
+  "task": "gcd",
+  "q": "Find the Greatest Common Divisor (GCD) of these numbers: 549, 330. Give only the GCD as your final answer.",
+  "gold": "3",
+  "out": "27"
+ },
+ {
+  "task": "gcd",
+  "q": "Find the Greatest Common Divisor (GCD) of these numbers: 787, 311. Give only the GCD as your final answer.",
+  "gold": "1",
+  "out": "299"
+ },
+ {
+  "task": "gcd",
+  "q": "Find the Greatest Common Divisor (GCD) of these numbers: 373, 536. Give only the GCD as your final answer.",
+  "gold": "1",
+  "out": "The GCD of 373 and 536 is 11."
+ },
+ {
+  "task": "gcd",
+  "q": "Find the Greatest Common Divisor (GCD) of these numbers: 39, 637. Give only the GCD as your final answer.",
+  "gold": "13",
+  "out": "21"
+ },
+ {
+  "task": "gcd",
+  "q": "Find the Greatest Common Divisor (GCD) of these numbers: 62, 540. Give only the GCD as your final answer.",
+  "gold": "2",
+  "out": "26"
+ },
+ {
+  "task": "gcd",
+  "q": "Find the Greatest Common Divisor (GCD) of these numbers: 780, 562. Give only the GCD as your final answer.",
+  "gold": "2",
+  "out": "26"
+ },
+ {
+  "task": "gcd",
+  "q": "Find the Greatest Common Divisor (GCD) of these numbers: 704, 612. Give only the GCD as your final answer.",
+  "gold": "4",
+  "out": "288"
+ },
+ {
+  "task": "gcd",
+  "q": "Find the Greatest Common Divisor (GCD) of these numbers: 275, 462. Give only the GCD as your final answer.",
+  "gold": "11",
+  "out": "21"
+ },
+ {
+  "task": "base_conversion",
+  "q": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-14 number 509 to base-9\n",
+  "gold": "1318",
+  "out": "509 = 1163"
+ },
+ {
+  "task": "base_conversion",
+  "q": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-13 number 567 to base-8\n",
+  "gold": "1642",
+  "out": "567 = 117711111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+ },
+ {
+  "task": "base_conversion",
+  "q": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-9 number 666 to base-13\n",
+  "gold": "330",
+  "out": "answer: 11102222222211111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+ },
+ {
+  "task": "base_conversion",
+  "q": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the hexadecimal number 98 to base-8\n",
+  "gold": "230",
+  "out": "121"
+ },
+ {
+  "task": "base_conversion",
+  "q": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-9 number 28 to base-5\n",
+  "gold": "101",
+  "out": "answer: 14"
+ },
+ {
+  "task": "base_conversion",
+  "q": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-6 number 204 to base-9\n",
+  "gold": "84",
+  "out": "14"
+ },
+ {
+  "task": "base_conversion",
+  "q": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-9 number 816 to base-7\n",
+  "gold": "1635",
+  "out": "146"
+ },
+ {
+  "task": "base_conversion",
+  "q": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-11 number 510 to base-9\n",
+  "gold": "754",
+  "out": "510 = 101011011011100110111011011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011101110111011"
+ },
+ {
+  "task": "base_conversion",
+  "q": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-10 number 81 to base-7\n",
+  "gold": "144",
+  "out": "16"
+ },
+ {
+  "task": "base_conversion",
+  "q": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-10 number 746 to base-7\n",
+  "gold": "2114",
+  "out": "126"
+ },
+ {
+  "task": "base_conversion",
+  "q": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-11 number 236 to hexadecimal\n",
+  "gold": "119",
+  "out": "14"
+ },
+ {
+  "task": "base_conversion",
+  "q": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-10 number 551 to base-4\n",
+  "gold": "20213",
+  "out": "10111110"
+ },
+ {
+  "task": "base_conversion",
+  "q": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the binary number 10101010 to base-10\n",
+  "gold": "170",
+  "out": "45"
+ },
+ {
+  "task": "base_conversion",
+  "q": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-3 number 1002100 to base-14\n",
+  "gold": "408",
+  "out": "answer: 66200"
+ },
+ {
+  "task": "base_conversion",
+  "q": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-12 number 405 to hexadecimal\n",
+  "gold": "245",
+  "out": "15"
+ },
+ {
+  "task": "base_conversion",
+  "q": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-5 number 4024 to base-12\n",
+  "gold": "36a",
+  "out": "answer: 6200"
+ }
+]

@@ -1,0 +1,866 @@
+[
+ {
+  "task": "basic_arithmetic",
+  "q": "Calculate -7 + -6 * -9 + 2 / 2.",
+  "gold": "48",
+  "outs": [
+   "First, we perform the multiplication and division from left to right:\n\n-7 + -6 * -9 + 2 / 2 = -7 + 54 + 1\n\nNow, we perform the addition and subtraction from left to right:\n\n-7 + 54 = 47\n47 + 1 = 48\n\nSo, the final answer is 48.",
+   "First, we need to follow the order of operations (PEMDAS/BODMAS), which stands for Parentheses/Brackets, Exponents/Orders, Multiplication and Division (from left to right), and Addition and Subtraction (from left to right).\n\n1. **Multiplication**: Calculate -6 * -9\n   \\[\n   -6 \\times -9 = 54\n   \\]\n\n2. **Division**: Calculate 2 / 2\n   \\[\n   2 \\div 2 = 1\n   \\]\n\n3. **Addition and Subtraction**: Finally, perform -7 + 54 + 1\n   \\[\n   -7 + 54 + 1 = 48\n   \\]\n\nSo, the final answer is 48."
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    1.0,
+    "phrase"
+   ],
+   [
+    1.0,
+    "phrase"
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "basic_arithmetic",
+  "q": "Calculate 1433 * 4201 + 9488 + 3479 * 1389.",
+  "gold": "10861852",
+  "outs": [
+   "1433 * 4201 + 9488 + 3479 * 1389 = 6069347 + 9488 + 4716401 = 6264852",
+   "The final answer is 7222257."
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.0,
+    null
+   ],
+   [
+    0.0,
+    null
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "basic_arithmetic",
+  "q": "Calculate -( 846 * -6489 * 3237 * -92 + -8651 / 8651 ).",
+  "gold": "-1634852831975",
+  "outs": [
+   "First, let's calculate the multiplication:\n846 * -6489 * 3237 * -92 = 208,495,547,364\nThen, let's calculate the division:\n8651 / 8651 = 1\n\nNow we can plug these values back into the expression:\n-(208,495,547,364 + (-1)) = -(208,495,547,364 - 1) = -208,495,547,364 + 1\n-208,495,547,364 + 1 = -208,495,547,363\n\nSo the final answer is -208,495,547,363.",
+   "<answer>2246004090</answer>"
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.0,
+    null
+   ],
+   [
+    0.0,
+    null
+   ]
+  ],
+  "extracted": [
+   null,
+   "2246004090"
+  ]
+ },
+ {
+  "task": "basic_arithmetic",
+  "q": "Calculate -2533 - 6386 * 3588.",
+  "gold": "-22915501",
+  "outs": [
+   "<answer>60813424</answer>",
+   "First, we need to multiply -2533 and 6386, and then subtract that product from -2533. \n\n-2533 * 6386 = -16333318\n\nSo the calculation becomes:\n\n-2533 - (-16333318)\n\nNow, we need to subtract -16333318 from -2533:\n\n-2533 + 16333318 = 16330985\n\nTherefore, the final answer is 16330985."
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.0,
+    null
+   ],
+   [
+    0.0,
+    null
+   ]
+  ],
+  "extracted": [
+   "60813424",
+   null
+  ]
+ },
+ {
+  "task": "chain_sum",
+  "q": "State the final answer to the following arithmetic problem: 0 + 1 - 9 + 0 + 1 =",
+  "gold": "-7",
+  "outs": [
+   "-9",
+   "0"
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.0,
+    null
+   ],
+   [
+    0.0,
+    null
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "chain_sum",
+  "q": "State the final answer to the following arithmetic problem: 7408 + 3443 - 6716 - 8100 - 4489 =",
+  "gold": "-8454",
+  "outs": [
+   "<answer>15055</answer>",
+   "The final answer to the arithmetic problem is: 495."
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.0,
+    null
+   ],
+   [
+    0.0,
+    null
+   ]
+  ],
+  "extracted": [
+   "15055",
+   null
+  ]
+ },
+ {
+  "task": "chain_sum",
+  "q": "State the final answer to the following arithmetic problem: 8815 - 5286 - 9458 + 6422 + 9767 + 2755 =",
+  "gold": "13015",
+  "outs": [
+   "8815 - 5286 - 9458 + 6422 + 9767 + 2755 = 2203.",
+   "6402"
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.0,
+    null
+   ],
+   [
+    0.0,
+    null
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "chain_sum",
+  "q": "State the final answer to the following arithmetic problem: 6069 - 4932 - 4733 =",
+  "gold": "-3596",
+  "outs": [
+   "The final answer to the arithmetic problem 6069 - 4932 - 4733 is 0.",
+   "<answer>6069</answer>"
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.0,
+    null
+   ],
+   [
+    0.0,
+    null
+   ]
+  ],
+  "extracted": [
+   null,
+   "6069"
+  ]
+ },
+ {
+  "task": "countdown",
+  "q": "Calculate 126 using all of these numbers: 3, 3, 3, 45, 83.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+  "gold": "3/3 - 3 + 45 + 83",
+  "outs": [
+   "126 = 3 * 3 * 3 * 45 / 83",
+   "3 * 3 * 3 + 45 / 83 = 29.570458657142856"
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.05,
+    "equals"
+   ],
+   [
+    0.05,
+    "equals"
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "countdown",
+  "q": "Using all the numbers 79, 97, 2, 23, 24, 90, create an expression that equals 111.\nYou can only use each number once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+  "gold": "24 + 97 + 2 + 90 - 79 - 23",
+  "outs": [
+   "111 = 97 * 9/23 + 79 * 2 - 24",
+   "79 * (90 / 23) * 2 + 24"
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.05,
+    "equals"
+   ],
+   [
+    0.05,
+    "last_line"
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "countdown",
+  "q": "Calculate 201 using all of these numbers: 23, 6, 80, 86, 80, 99.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+  "gold": "99 + 80 + 23 + (6 - 86)/80",
+  "outs": [
+   "80 / (80 + 99) * 80 + 6",
+   "80 / (80 + 86) * 86 / 80 = 10.6"
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.05,
+    "last_line"
+   ],
+   [
+    0.05,
+    "equals"
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "countdown",
+  "q": "Calculate 140 using all of these numbers: 41, 74, 63, 38.\nEach number may be used at most once.\n\nFinal answer format instructions:\n1. Provide your solution as a arithmetic expression (no '=' sign).\n2. Do not include the target number in the expression.\n3. Use '*' for multiplication.\n4. Use '/' for division.\n5. Do not include any other text or formatting.\n",
+  "gold": "41 + 63 + 74 - 38",
+  "outs": [
+   "140 = 41 * 38 / 74",
+   "41 * (74 / 63) * 38 = 140"
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.05,
+    "equals"
+   ],
+   [
+    0.05,
+    "equals"
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "simple_equations",
+  "q": "Solve for y: 5*y + 14 = 509",
+  "gold": "99",
+  "outs": [
+   "<think>\n1. We start by isolating the term with the variable \\( y \\). To do this, we subtract 14 from both sides of the equation:\n   \\[\n   5y + 14 - 14 = 509 - 14\n   \\]\n\n2. Simplify both sides:\n   \\[\n   5y = 495\n   \\]\n\n3. Next, we solve for \\( y \\) by dividing both sides by 5:\n   \\[\n   y = \\frac{495}{5}\n   \\]\n\n4. Perform the division:\n   \\[\n   y = 99\n   \\]\n\n5. Therefore, the solution is:\n   \\[\n   y = 99\n   \\]\n\n<answer>99</answer>",
+   "To solve for y, start by isolating y on one side of the equation. Subtract 14 from both sides:\n\n5*y + 14 - 14 = 509 - 14\n\nThis simplifies to:\n\n5*y = 495\n\nNow, divide both sides by 5 to solve for y:\n\n5*y / 5 = 495 / 5\n\nThis gives us:\n\ny = 99\n\nSo the solution is y = 99."
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.0,
+    null
+   ],
+   [
+    1.0,
+    "equals"
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "simple_equations",
+  "q": "Solve for w: 1380*w + 61 = 114601",
+  "gold": "83",
+  "outs": [
+   "1380*w = 114601 - 61\n1380*w = 114540\nw = 114540 / 1380\nw = 82",
+   "To solve for w, we'll first isolate w by subtracting 61 from both sides of the equation:\n\n1380*w + 61 - 61 = 114601 - 61\n1380*w = 114540\n\nNow, we divide both sides by 1380 to isolate w:\n\n1380*w / 1380 = 114540 / 1380\nw = 83\n\nThe solution is w = 83."
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.0,
+    null
+   ],
+   [
+    1.0,
+    "equals"
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "simple_equations",
+  "q": "Solve for r: -34*r - 4 = -2384",
+  "gold": "70",
+  "outs": [
+   "To solve for r, we'll follow these steps:\n\n1. Start with the equation: -34*r - 4 = -2384\n2. Add 4 to both sides to isolate the term with r: -34*r = -2380\n3. Divide both sides by -34 to solve for r: r = -2380 / -34\n\nTherefore, the final answer is r = 70.",
+   "First, we need to solve for \\( r \\) by isolating it on one side of the equation. Let's start by adding 4 to both sides of the equation:\n\n\\[\n-34r - 4 + 4 = -2384 + 4\n\\]\n\nThis simplifies to:\n\n\\[\n-34r = -2380\n\\]\n\nNext, we divide both sides by -34:\n\n\\[\nr = \\frac{-2380}{-34}\n\\]\n\nThis gives us:\n\n\\[\nr = 68\n\\]\n\nSo, \\( r = 68 \\)."
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    1.0,
+    "equals"
+   ],
+   [
+    0.0,
+    null
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "simple_equations",
+  "q": "Find the value of e in the equation: 10 - 65*e = -3500",
+  "gold": "54",
+  "outs": [
+   "To find the value of \\( e \\) in the equation \\( 10 - 65e = -3500 \\), we will follow these steps:\n\n1. **Isolate the term containing \\( e \\)**:\n   \\[\n   10 - 65e = -3500\n   \\]\n   Subtract 10 from both sides to get:\n   \\[\n   10 - 10 - 65e = -3500 - 10\n   \\]\n   Simplifying this, we get:\n   \\[\n   -65e = -3510\n   \\]\n\n2. **Solve for \\( e \\)**:\n   Divide both sides by \\(-65\\):\n   \\[\n   e = \\frac{-3510}{-65}\n   \\]\n   Simplify the fraction:\n   \\[\n   e = \\frac{3510}{65}\n   \\]\n   Perform the division:\n   \\[\n   e = 54\n   \\]\n\nTherefore, the value of \\( e \\) is \\( 54 \\).\n\n**Final Answer**: \\( 54 \\)",
+   "To find the value of e in the equation \\(10 - 65e = -3500\\), we will solve for e step by step.\n\n1. Start with the given equation:\n   \\[\n   10 - 65e = -3500\n   \\]\n\n2. Isolate the term with e by subtracting 10 from both sides of the equation:\n   \\[\n   -65e = -3500 - 10\n   \\]\n   Simplifying the right side:\n   \\[\n   -65e = -3510\n   \\]\n\n3. Divide both sides by -65 to solve for e:\n   \\[\n   e = \\frac{-3510}{-65}\n   \\]\n   Simplifying the fraction:\n   \\[\n   e = \\frac{3510}{65}\n   \\]\n   \\[\n   e = 54\n   \\]\n\nThe value of e is \\(\\boxed{54}\\)."
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    1.0,
+    "equals"
+   ],
+   [
+    1.0,
+    "boxed"
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "number_sorting",
+  "q": "Sort these numbers in descending order: -77.0, 82.2, -93.01, -83.2, -53.0, 97.0, -30.78, -3.2, -70.0, 43.0\nPlease follow the instruction below:\n## 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n## 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n",
+  "gold": "['97.0', '82.2', '43.0', '-3.2', '-30.78', '-53.0', '-70.0', '-77.0', '-83.2', '-93.01']",
+  "outs": [
+   "[-69, -53.0, -30.78, -3.2, -70.0, -77.0, -83.2, -93.01, 43.0, 82.2, 97.0]",
+   "[-69, -53.0, -43.0, -30.78, -28.0, -23.0, -17.0, -13, -3.2, 43.0, 82.2, 97.0, 112.0, 116.0, 152.0, 163.0]"
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.0,
+    null
+   ],
+   [
+    0.0,
+    null
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "number_sorting",
+  "q": "Sort these numbers in ascending order: 7.09, -6.0, 90.8, 44.1, -57.0, -17.7, -11.26, -7.1, 52.4\nPlease follow the instruction below:\n## 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n## 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n",
+  "gold": "['-57.0', '-17.7', '-11.26', '-7.1', '-6.0', '7.09', '44.1', '52.4', '90.8']",
+  "outs": [
+   "[-69, -17.7, -11.26, -57.0, -7.1, -6.0, 44.1, 52.4, 90.8]",
+   "[-17.7, -11.26, -6.0, -57.0, -7.1, 44.1, 52.4, 7.09, 90.8]"
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.0,
+    null
+   ],
+   [
+    0.0,
+    null
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "number_sorting",
+  "q": "Sort these numbers in ascending order: 48.0, -47.7, 7.02, 62.07, -40.0, -91.8, 60.98, -65.62, -15.85, 57.5\nPlease follow the instruction below:\n## 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n## 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n",
+  "gold": "['-91.8', '-65.62', '-47.7', '-40.0', '-15.85', '7.02', '48.0', '57.5', '60.98', '62.07']",
+  "outs": [
+   "[-69, -13, -40.0, -47.7, -91.8, -15.85, -65.62, 48.0, 57.5, 62.07]",
+   "[57.5, -47.7, -40.0, -65.62, -15.85, -91.8, -48.0, 48.0, 62.07, 60.98]"
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.0,
+    null
+   ],
+   [
+    0.0,
+    null
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "number_sorting",
+  "q": "Sort these numbers in ascending order: 77.4, -52.0, -29.74, -29.2, -17.0\nPlease follow the instruction below:\n## 1. Let all your answers be a list of numbers. Instead of reporting your answer as -69, -13, 1, 7, 11, 43, 59, 61, use ['-69', '-13', '1', '7', '11', '43', '59', '61'] instead\n## 2. Convert all numbers in the square brackets as strings. For example, ['-69', '-13', '1', '7', '11', '43', '59', '61']\n",
+  "gold": "['-52.0', '-29.74', '-29.2', '-17.0', '77.4']",
+  "outs": [
+   "[-52.0, -29.2, -29.74, -17.0, 77.4]",
+   "['-52.0', '-29.74', '-29.2', '-17.0', '77.4']"
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.0,
+    null
+   ],
+   [
+    1.0,
+    "last_line"
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "letter_counting",
+  "q": "How many times does the letter \"a\" appear in the text: \"story The scene where the village maid discusses interesting philosophical problems with\"?",
+  "gold": "3",
+  "outs": [
+   "There is no letter \"a\" in the text provided.",
+   "1"
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.0,
+    null
+   ],
+   [
+    0.0,
+    null
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "letter_counting",
+  "q": "How many times does the letter \"w\" appear in the text: \"years he produced and distributed Project Gutenberg eBooks with only a\"?",
+  "gold": "1",
+  "outs": [
+   "6",
+   "There is one \"w\" in the text."
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.0,
+    null
+   ],
+   [
+    0.0,
+    null
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "letter_counting",
+  "q": "How many times does the letter \"r\" appear in the text: \"DAMAGE 1 F 3 LIMITED RIGHT OF REPLACEMENT OR REFUND If you discover\"?",
+  "gold": "5",
+  "outs": [
+   "To determine how many times the letter \"r\" appears in the text \"DAMAGE 1 F 3 LIMITED RIGHT OF REPLACEMENT OR REFUND If you discover\", I'll count each \"r\" separately:\n\n1. \"DAMAGE\" - 1 \"r\"\n2. \"1\" - 1 \"r\"\n3. \"F\" - 1 \"r\"\n4. \"3\" - 1 \"r\"\n5. \"LIMITED\" - 1 \"r\"\n6. \"RIGHT\" - 1 \"r\"\n7. \"OF\" - 1 \"r\"\n8. \"REPLACEMENT\" - 1 \"r\"\n9. \"OR\" - 1 \"r\"\n10. \"REFUND\" - 1 \"r\"\n11. \"IF\" - 1 \"r\"\n12. \"YOU\" - 1 \"r\"\n13. \"DISCOVER\" - 1 \"r\"\n\nAdding these together: 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 = 10\n\nTherefore, the letter \"r\" appears 10 times in the given text.",
+   "The letter \"r\" appears once in the text: \"1 F 3 LIMITED RIGHT OF REPLACEMENT OR REFUND\"."
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.0,
+    null
+   ],
+   [
+    0.0,
+    null
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "letter_counting",
+  "q": "How many times does the letter \"h\" appear in the text: \"derivative works based on the work as\"?",
+  "gold": "1",
+  "outs": [
+   "There is one \"h\" in the text \"derivative works based on the work as\".",
+   "The letter \"h\" appears 1 time in the text: \"derivative works based on the work as\"."
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.0,
+    null
+   ],
+   [
+    1.0,
+    "last_number"
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "gcd",
+  "q": "Find the Greatest Common Divisor (GCD) of these numbers: 120, 8. Give only the GCD as your final answer.",
+  "gold": "8",
+  "outs": [
+   "16",
+   "40"
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.0,
+    null
+   ],
+   [
+    0.0,
+    null
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "gcd",
+  "q": "Find the Greatest Common Divisor (GCD) of these numbers: 739, 662. Give only the GCD as your final answer.",
+  "gold": "1",
+  "outs": [
+   "739",
+   "182"
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.0,
+    null
+   ],
+   [
+    0.3333333333333333,
+    "last_line"
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "gcd",
+  "q": "Find the Greatest Common Divisor (GCD) of these numbers: 548, 110. Give only the GCD as your final answer.",
+  "gold": "2",
+  "outs": [
+   "548 and 110 have a greatest common divisor (GCD) of 22.",
+   "12"
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.5,
+    "last_number"
+   ],
+   [
+    0.5,
+    "last_line"
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "gcd",
+  "q": "Find the Greatest Common Divisor (GCD) of these numbers: 246, 974. Give only the GCD as your final answer.",
+  "gold": "2",
+  "outs": [
+   "To find the Greatest Common Divisor (GCD) of 246 and 974, we can use the Euclidean algorithm:\n\n1. Divide 974 by 246 and find the remainder.\n   \\( 974 \\div 246 = 4 \\) with a remainder of \\( 974 - 4 \\times 246 = 974 - 984 = -10 \\)\n   \n2. Since the remainder is now negative, we borrow from the divisibility rule for 10. Since we borrowed 10 from 974, we adjust the divisor and the remainder accordingly:\n   \\( 246 + 10 = 256 \\)\n   \n3. Now, we divide 246 by 256:\n   \\( 246 \\div 256 = 0 \\) with a remainder of \\( 246 - 0 \\times 256 = 246 \\)\n   \n4. Since the remainder is now 0, the divisor at this step is the GCD. Thus, the GCD of 246 and 974 is 2",
+   "<answer>2</answer>"
+  ],
+  "strict": [
+   0.0,
+   1.0
+  ],
+  "lenient": [
+   [
+    1.0,
+    "last_number"
+   ],
+   [
+    1.0,
+    "tag"
+   ]
+  ],
+  "extracted": [
+   null,
+   "2"
+  ]
+ },
+ {
+  "task": "base_conversion",
+  "q": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-14 number 509 to base-9\n",
+  "gold": "1318",
+  "outs": [
+   "8",
+   "14\n5\n0\n9"
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.0,
+    null
+   ],
+   [
+    0.0,
+    null
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "base_conversion",
+  "q": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-13 number 567 to base-8\n",
+  "gold": "1642",
+  "outs": [
+   "567 in base-13 is equal to 515 in base-8.",
+   "567 (base 13) = 127 (base 10)"
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.0,
+    null
+   ],
+   [
+    0.0,
+    null
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "base_conversion",
+  "q": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the base-9 number 666 to base-13\n",
+  "gold": "330",
+  "outs": [
+   "answer: 1b4",
+   "15"
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.0,
+    null
+   ],
+   [
+    0.0,
+    null
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ },
+ {
+  "task": "base_conversion",
+  "q": "Your task is to convert a number between two different bases.\n\nIf the target base is > 10, use lowercase letters a-z for digits above 9.\n\nNow, convert the hexadecimal number 98 to base-8\n",
+  "gold": "230",
+  "outs": [
+   "102",
+   "8"
+  ],
+  "strict": [
+   0.0,
+   0.0
+  ],
+  "lenient": [
+   [
+    0.0,
+    null
+   ],
+   [
+    0.0,
+    null
+   ]
+  ],
+  "extracted": [
+   null,
+   null
+  ]
+ }
+]

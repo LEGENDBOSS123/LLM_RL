@@ -1,0 +1,33 @@
+{
+  "model": "Qwen2.5-0.5B-Instruct-4bit",
+  "n": 128,
+  "max_tokens": 512,
+  "accuracy": 0.0,
+  "lenient_accuracy": 0.11456705729166666,
+  "format_rate": 0.0,
+  "per_task": {
+    "basic_arithmetic": 0.0,
+    "chain_sum": 0.0,
+    "countdown": 0.0,
+    "simple_equations": 0.0,
+    "number_sorting": 0.0,
+    "letter_counting": 0.0,
+    "gcd": 0.0,
+    "base_conversion": 0.0
+  },
+  "per_task_lenient": {
+    "basic_arithmetic": 0.0625,
+    "chain_sum": 0.126953125,
+    "countdown": 0.05,
+    "simple_equations": 0.25,
+    "number_sorting": 0.0,
+    "letter_counting": 0.1875,
+    "gcd": 0.23958333333333334,
+    "base_conversion": 0.0
+  },
+  "single_stream_tok_s": 251.28122011738884,
+  "batch_tok_s": 447.33621918352475,
+  "avg_gen_len": 50.8359375,
+  "wall_s": 14.546105861663818,
+  "peak_mem_gb": 0.369101984
+}

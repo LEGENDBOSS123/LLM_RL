@@ -1,0 +1,8 @@
+=== B vs Z (paired, same problems; 95% bootstrap CI of the difference) ===
+  unseen   p1   Z 0.231  B 0.249  diff +0.018  [-0.003, +0.039]
+  unseen   maj  Z 0.246  B 0.282  diff +0.036  [-0.014, +0.082]
+  unseen   pk   Z 0.557  B 0.554  diff -0.004  [-0.050, +0.043]
+  gsm8k    p1   Z 0.777  B 0.743  diff -0.033  [-0.083, +0.017]
+  math500  p1   Z 0.545  B 0.620  diff +0.075  [+0.025, +0.130]  *
+  general  p1   Z 0.350  B 0.388  diff +0.037  [-0.017, +0.092]
+  per unseen task pass@8: letter_counting 0.75->0.80, family_relationships 0.60->0.70, word_sorting 0.20->0.15, number_sequence 0.70->0.72, course_schedule 0.65->0.55, circuit_logic 1.00->0.95, word_ladder 0.00->0.00
